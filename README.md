@@ -71,7 +71,7 @@ The projects are tiered, from the most technically advanced and research-aligned
     * Predicted the next product category a user will visit with 98.08% accuracy.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699) ![E-commerce](https://img.shields.io/badge/E--commerce-brightgreen)
 
-13. **[Geospatial Hotspot Analysis for Retail Strategy](Projects/Geospatial_Hotspot_Analysis_for_Retail_Strategy.ipynb)**
+13. **[Geospatial Hotspot Analysis for Retail Strategy](Projects/Geospatial_Hotspot_Analysis_for_Retail_Strategy_.ipynb)**
     * Transformed a list of 25,000+ store locations into a strategic map of market concentration using DBSCAN.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Folium](https://img.shields.io/badge/Folium-34A853) ![Geospatial](https://img.shields.io/badge/Geospatial-blueviolet)
 
