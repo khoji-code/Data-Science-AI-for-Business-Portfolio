@@ -109,7 +109,7 @@ The projects are tiered, from the most technically advanced and research-aligned
     * Predicted income level from census data with 87% accuracy.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699)
 
-22. **[Wine Quality Prediction](Projects/Wine_Quality.ipynb)**
+22. **[Wine Quality Prediction](Projects/Wine_Quality_UCI.ipynb)**
     * Used physicochemical properties to predict the quality score of wine and explain the results with LIME.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LIME](https://img.shields.io/badge/LIME-FFC107)
 
