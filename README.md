@@ -21,7 +21,7 @@ The projects are tiered, from the most technically advanced and research-aligned
     * Trained a DQN agent to learn an optimal, dynamic budget strategy that outperformed static rules.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white) ![Reinforcement Learning](https://img.shields.io/badge/Reinforcement_Learning-blueviolet) ![OpenAI Gym](https://img.shields.io/badge/OpenAI_Gym-0081A5?logo=openai&logoColor=white)
 
-2. **[Reinforcement Learning for Dynamic Pricing](Reinforcement_Learning_for_Dynamic_Pricing.ipynb)**
+2. **[Reinforcement Learning for Dynamic Pricing](Projects/Reinforcement_Learning_for_Dynamic_Pricing.ipynb)**
     * Developed a DQN agent to learn a revenue-maximizing dynamic pricing policy in a simulated market.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white) ![Reinforcement Learning](https://img.shields.io/badge/Reinforcement_Learning-blueviolet)
 
