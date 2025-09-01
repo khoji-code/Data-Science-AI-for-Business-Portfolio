@@ -17,7 +17,7 @@ The projects are tiered, from the most technically advanced and research-aligned
 
 ### Tier 1: Advanced AI for Prescriptive & Strategic Analytics
 
-1. **[Deep Reinforcement Learning for Strategic Budget Allocation](Projects/Deep_Reinforcement_Learning_for_Budget_Allocation.ipynb)**
+1. **[Deep Reinforcement Learning for Strategic Budget Allocation](Projects/Deep_Reinforcement_Learning_for_Strategic_Budget_Allocation.ipynb)**
     * Trained a DQN agent to learn an optimal, dynamic budget strategy that outperformed static rules.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white) ![Reinforcement Learning](https://img.shields.io/badge/Reinforcement_Learning-blueviolet) ![OpenAI Gym](https://img.shields.io/badge/OpenAI_Gym-0081A5?logo=openai&logoColor=white)
 
@@ -35,7 +35,7 @@ The projects are tiered, from the most technically advanced and research-aligned
 
 ### Tier 2: Responsible AI, MLOps & Advanced Model Interpretation
 
-5. **[Credit Card Default Prediction with XAI and Fairness Audit](Projects/Credit_Card_Default_Prediction_with_XAI_and_Fairness_Audit(1).ipynb)**
+5. **[Credit Card Default Prediction with XAI and Fairness Audit](Projects/Credit_Card_Default_Prediction_with_XAI_and_Fairness_Audit.ipynb)**
     * Audited a default prediction model (AUC 0.778) for bias, reducing the fairness gap by 57%.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![SHAP](https://img.shields.io/badge/SHAP-E81123) ![Fairlearn](https://img.shields.io/badge/Fairlearn-0078D4) ![Responsible AI](https://img.shields.io/badge/Responsible_AI-darkgreen)
 
