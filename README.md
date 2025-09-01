@@ -67,7 +67,7 @@ The projects are tiered, from the most technically advanced and research-aligned
 
 ### Tier 4: Core Business Intelligence & Customer Analytics
 
-12. **[Predicting Customer's Next Action in an Online Clickstream](Projects/Predicting_Customer's_Next_Action_in_an_Online_Shopping_Clickstream.ipynb)**
+12. **[Predicting Customer's Next Action in an Online Clickstream](Projects/Predicting_Customers_Next_Action_in_an_Online_Shopping_Clickstream.ipynb)**
     * Predicted the next product category a user will visit with 98.08% accuracy.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699) ![E-commerce](https://img.shields.io/badge/E--commerce-brightgreen)
 
