@@ -61,7 +61,7 @@ The projects are tiered, from the most technically advanced and research-aligned
     * Classified cyberattacks in IoT network traffic with 96% F1-score while handling severe class imbalance.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931A?logo=scikit-learn&logoColor=white) ![LightGBM](https://img.shields.io/badge/LightGBM-B90948) ![Cybersecurity](https://img.shields.io/badge/Cybersecurity-darkred)
 
-11. **[Fraud Detection with a TensorFlow LSTM Autoencoder](Projects/Fraud_Detection_with_a_TensorFlow_LSTM_Autoencoder(2)%20(1).ipynb)**
+11. **[Fraud Detection with a TensorFlow LSTM Autoencoder](Projects/Fraud_Detection_with_a_TensorFlow_LSTM_Autoencoder.ipynb)**
     * Used an unsupervised LSTM Autoencoder to detect fraudulent transactions by identifying anomalies.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white) ![Keras](https://img.shields.io/badge/Keras-D00000?logo=keras&logoColor=white) ![Unsupervised Learning](https://img.shields.io/badge/Unsupervised-darkorange)
 
