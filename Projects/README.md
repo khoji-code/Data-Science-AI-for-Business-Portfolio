@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>📊 Concise Explanation 📈</h1>
+  <h1>Concise Explanation</h1>
 </div>
 ---
 
