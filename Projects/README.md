@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://i.pinimg.com/originals/35/a7/c3/35a7c36a49536515735de5b8a47587a8.gif" width="100%"/>
+  <img/>
 </div>
 <div align="center">
   <img src="https://img.shields.io/badge/Portfolio-Data_Science_&_AI-5A2A9A?style=for-the-badge&logo=python" alt="Portfolio Badge"/>
