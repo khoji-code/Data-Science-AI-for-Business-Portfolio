@@ -1,7 +1,6 @@
 <div align="center">
   <h1>Concise Explanation</h1>
 </div>
----
 
 # Deep Reinforcement Learning for Strategic Budget Allocation
 
