@@ -119,3 +119,59 @@ The project follows a multi-stage data science pipeline:
 * **`ipywidgets`**: A library for creating interactive user interface elements within Jupyter Notebooks.
 
 ---
+---
+# Reinforcement Learning for Dynamic Pricing
+
+This project builds an autonomous AI agent that learns an optimal **dynamic pricing** strategy to maximize revenue in an e-commerce setting. Using a Deep Q-Network (DQN), the agent is trained through trial-and-error in a custom-built simulation that models real-world customer behavior, including price elasticity.
+
+The final learned policy is evaluated against static pricing strategies (e.g., a fixed price) to demonstrate its superior performance.
+
+---
+
+## Strategic Value
+
+The purpose of this project is to create a prescriptive and automated pricing engine that can adapt to changing conditions (like remaining inventory and time) to maximize profitability. It showcases how Reinforcement Learning can be used to build intelligent agents that actively make strategic business decisions, moving beyond simple analytics to generate tangible value.
+
+---
+
+## Methodology Workflow
+
+The project is structured as a complete Reinforcement Learning pipeline:
+
+1. **Environment Creation**: A custom e-commerce simulation (`EcommerceEnv`) is built using the **OpenAI Gymnasium** framework. This environment acts as the "game" for the AI agent, defining:
+    * **State Space**: What the agent can see (time remaining, inventory left).
+    * **Action Space**: The decisions it can make (a set of 5 price multipliers).
+    * **Demand Curve**: A function that simulates how customer demand changes as the price changes.
+    * **Reward Function**: The goal the agent tries to maximize (the daily revenue).
+
+2. **Agent Development**: A **Deep Q-Network (DQN) Agent** (`DQNAgent`) is created using TensorFlow/Keras. This agent's "brain" is a neural network that learns to predict the best action (price) to take in any given state.
+
+3. **Training**: The agent is trained over 500 **episodes** (simulated 30-day sales periods). In each episode, it interacts with the environment and learns from its experiences using key techniques:
+    * **Epsilon-Greedy Strategy**: The agent balances exploring random prices to discover new information with exploiting its current best-known strategy.
+    * **Experience Replay**: The agent stores its experiences in a memory buffer and learns from a random sample of them, leading to more stable and efficient training.
+
+4. **Evaluation**: After training, the agent's learned dynamic pricing policy is tested and compared against two baseline strategies: a fixed base price and a fixed 20% discount. The results clearly demonstrate that the dynamic approach learned by the RL agent generates significantly higher total revenue.
+
+---
+
+## Key Concepts Explained
+
+* **Reinforcement Learning (RL)**: A type of machine learning where an agent learns to make decisions by performing actions in an environment and receiving rewards or penalties.
+* **Deep Q-Network (DQN)**: An RL algorithm that uses a deep neural network to learn a policy. The network learns to predict a **Q-value** (quality score) for each action in a given state.
+* **Environment (`EcommerceEnv`)**: The simulated world where the agent learns. It defines the rules, states, actions, and rewards.
+* **Price Elasticity**: The economic principle that demand for a product changes in response to its price. This is simulated by the `_get_demand` function.
+* **Policy**: The strategy that the agent learns. In this case, it's a mapping from a state (time/inventory) to the optimal action (price).
+* **Exploration vs. Exploitation**: The trade-off an RL agent must make between exploring new, random actions and exploiting its current best-known strategy.
+* **Experience Replay**: A technique where the agent stores past experiences in a memory buffer and trains on random samples to improve learning stability.
+
+---
+
+## Key Libraries
+
+* **TensorFlow**: The deep learning framework used to build and train the agent's neural network.
+* **OpenAI Gymnasium**: The toolkit used to provide a standardized structure for the custom RL environment.
+* **Pandas**: Used for data manipulation and analysis.
+* **Matplotlib & Seaborn**: Used for creating plots to visualize the training progress and final results.
+
+---
+---
