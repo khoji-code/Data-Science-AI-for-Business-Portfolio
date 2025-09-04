@@ -2,7 +2,7 @@
   <img/>
 </div>
 <div align="center">
-  <img src="https://img.shields.io/badge/Portfolio-Data_Science_&_AI-5A2A9A?style=for-the-badge&logo=python" alt="Portfolio Badge"/>
+  <img/>
   <h1>📊 Concise Explanation 📈</h1>
 </div>
 ---
