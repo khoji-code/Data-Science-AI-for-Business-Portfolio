@@ -1,8 +1,4 @@
 <div align="center">
-  <img/>
-</div>
-<div align="center">
-  <img/>
   <h1>📊 Concise Explanation 📈</h1>
 </div>
 ---
