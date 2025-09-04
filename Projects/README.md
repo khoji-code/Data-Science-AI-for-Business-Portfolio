@@ -247,3 +247,58 @@ This analysis allows the business to focus its marketing efforts on the customer
 	
 ---
 ---
+# Credit Card Default Prediction with XAI and Fairness Audit
+
+This project demonstrates a complete, end-to-end workflow for building a responsible AI system. It goes beyond simple prediction to create a model that is not only **accurate** but also **transparent** and **fair**.
+
+The project uses the UCI Credit Card Default dataset to:
+1. **Predict** which customers are likely to default.
+2. **Explain (XAI)** *why* the model makes its predictions.
+3. **Audit and Mitigate** potential gender bias in the model's decisions.
+
+
+
+---
+
+## Methodology Workflow
+
+The project is structured in three key phases:
+
+### 1. Predictive Modeling
+* **Data Exploration**: The dataset is loaded, cleaned, and analyzed. A key finding is the **class imbalance**, with far more non-defaulters than defaulters.
+* **Model Training**: An **XGBoost Classifier** is trained to predict the probability of default. The `scale_pos_weight` parameter is used to handle the class imbalance, ensuring the model pays attention to the less frequent but critical default cases.
+* **Evaluation**: The model's performance is measured using the **ROC AUC score** and a **confusion matrix**, confirming its strong predictive accuracy.
+
+### 2. Explainable AI (XAI)
+* **SHAP (SHapley Additive exPlanations)** is used to "open the black box" of the XGBoost model.
+* **Global Explanations**: SHAP summary plots are generated to identify the most influential features globally. This revealed that the most recent payment status (`PAY_0`) and the credit limit (`LIMIT_BAL`) are the top predictors. 
+* **Local Explanations**: SHAP force plots (demonstrated in the notebook) can be used to explain the prediction for a single, individual customer.
+
+### 3. Fairness Audit & Mitigation
+* **Audit**: The **Fairlearn** library is used to conduct a fairness audit, checking for disparities in the model's performance based on the sensitive feature `SEX`. The audit revealed a bias, quantified by the **Equalized Odds Difference**.
+* **Mitigation**: A post-processing technique called `ThresholdOptimizer` is applied. This method adjusts the decision threshold for each gender group to balance the error rates without retraining the entire model.
+* **Re-Evaluation**: The audit is run again on the mitigated predictions, confirming that the bias was significantly reduced.
+
+---
+
+## Key Concepts Explained
+
+* **XGBoost**: A powerful and efficient gradient-boosting algorithm used for building high-performance predictive models.
+* **SHAP (Explainable AI)**: A method for explaining the output of a machine learning model by calculating the contribution of each feature to a prediction.
+* **Fairlearn**: A Python toolkit for assessing and improving the fairness of machine learning systems.
+* **Equalized Odds**: A definition of fairness that requires a model to have equal true positive rates and equal false positive rates across different sensitive groups (e.g., male and female).
+
+---
+
+## Conclusion & Key Insight
+
+This project successfully demonstrates a mature data science workflow that balances performance with responsibility.
+
+* **Prediction**: An accurate model was built (ROC AUC of 0.778).
+* **Explanation**: The model's decisions were made transparent using SHAP.
+* **Fairness**: An initial gender bias was identified and then successfully mitigated, reducing the **Equalized Odds Difference from 0.0465 to 0.0199**.
+
+Most importantly, the project quantifies the **accuracy-fairness trade-off**. Improving fairness resulted in a slight drop in overall accuracy (from 82.03% to 80.95%). This highlights the complex, real-world considerations required when deploying AI systems that impact people's lives.
+
+---
+---
