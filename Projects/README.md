@@ -1,3 +1,12 @@
+<div align="center">
+  <img src="https://i.pinimg.com/originals/35/a7/c3/35a7c36a49536515735de5b8a47587a8.gif" width="100%"/>
+</div>
+<div align="center">
+  <img src="https://img.shields.io/badge/Portfolio-Data_Science_&_AI-5A2A9A?style=for-the-badge&logo=python" alt="Portfolio Badge"/>
+  <h1>📊 Concise Explanation 📈</h1>
+</div>
+---
+
 # Deep Reinforcement Learning for Strategic Budget Allocation
 
 This project uses Deep Reinforcement Learning (DRL) to train an AI agent that learns an optimal budget allocation strategy. The agent is trained in a custom business simulation built with real-world e-commerce data.
