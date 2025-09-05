@@ -40,7 +40,7 @@ The projects are tiered, from the most technically advanced and research-aligned
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![SHAP](https://img.shields.io/badge/SHAP-E81123) ![Fairlearn](https://img.shields.io/badge/Fairlearn-0078D4) ![Responsible AI](https://img.shields.io/badge/Responsible_AI-darkgreen)
 
 6. **[Multi-Label Product Classification and Topic Modeling](Projects/Multi_Label_Product_Classification_and_Topic_Modeling.ipynb)**
-    * Built a classic supervised model (98% Acc) for multi-label classification and topic modeling.
+    * Built a classic supervised model (96% Acc) for multi-label classification and topic modeling.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931A?logo=scikit-learn&logoColor=white) ![NLP](https://img.shields.io/badge/NLP-blue) ![LDA](https://img.shields.io/badge/Topic_Modeling-orange)
 
 ### Tier 3: Advanced Analytics for Operations & Supply Chain
