@@ -302,3 +302,56 @@ Most importantly, the project quantifies the **accuracy-fairness trade-off**. Im
 
 ---
 ---
+# Multi-Label Product Classification and Topic Modeling
+
+This project uses Natural Language Processing (NLP) to tackle two key e-commerce challenges: automatically categorizing products and discovering hidden themes within their descriptions. It builds a complete pipeline that includes a **multi-label classification** model to assign existing category tags and an unsupervised **topic modeling** algorithm to identify new, latent topics from the raw text data.
+
+The project features advanced EDA with an interactive sunburst chart and an interactive topic visualization dashboard.
+
+---
+
+## Strategic Value & Purpose
+
+For a large e-commerce platform, manually categorizing millions of products is inefficient and inconsistent. This project provides a two-pronged solution:
+
+1. **Automated Categorization**: The classification model acts as an intelligent tagging system, reading a product's description and assigning it to multiple relevant categories (e.g., a "smart watch" could be tagged under "Electronics," "Wearable Technology," and "Fitness"). This improves product discovery and user experience.
+2. **Uncovering Hidden Insights**: Topic modeling acts as a market research tool. By analyzing the language in product descriptions, it can discover underlying themes or trends in the product catalog (e.g., identifying a growing cluster of products related to "sustainable materials" or "smart home integration") that may not be captured by the existing category structure.
+
+
+---
+
+## Key Concepts Explained
+
+### Core Machine Learning & NLP Concepts
+
+* **NLP (Natural Language Processing)**
+    A field of artificial intelligence that focuses on enabling computers to understand, interpret, process, and generate human language. NLP is the technology behind translation services, chatbots, and the text analysis performed in this project.
+
+* **TfidfVectorizer**
+    A method for converting a collection of text documents into a matrix of numerical features. It calculates a score for each word based on two factors:
+    * **Term Frequency (TF)**: How often a word appears in a single document.
+    * **Inverse Document Frequency (IDF)**: How rare the word is across all documents.
+    Words that are frequent in one document but rare overall receive the highest scores, making them powerful predictive features.
+
+* **OneVsRestClassifier**
+    A strategy for handling multi-class or multi-label classification problems. It works by training a separate binary (yes/no) classifier for each class. To make a prediction for a new product, it runs all classifiers and assigns all the tags for which the classifier predicts "yes".
+
+* **Logistic Regression**
+    A fundamental classification algorithm used to predict the probability of a binary outcome (e.g., yes/no). In this project, it's used as the base estimator within the `OneVsRestClassifier`, where it builds a separate logistic regression model for each category.
+
+* **LabelEncoder**
+    A utility for converting categorical text labels into numerical integers (e.g., `['cat', 'dog', 'cat']` becomes `[0, 1, 0]`). While `LabelEncoder` is for single-label problems, this project uses its multi-label equivalent, `MultiLabelBinarizer`, to transform the list of category tags for each product into a binary format the model can learn.
+
+### Visualization & Evaluation Concepts
+
+* **Wordcloud library**
+    A visualization tool that creates an image composed of words from a text. The size of each word is proportional to its frequency. While not used in this notebook, it's a popular alternative for quick text exploration. This project uses more advanced visualizations like the sunburst chart and `pyLDAvis`. 
+
+* **t-SNE (t-Distributed Stochastic Neighbor Embedding)**
+    An advanced visualization algorithm for exploring high-dimensional data. It creates a 2D or 3D "map" where similar data points are modeled as being close together. This is excellent for discovering underlying clusters. The `pyLDAvis` tool used in this project is based on a similar dimensionality reduction principle to map out the topics. 
+
+* **Confusion Matrix**
+    A table used to evaluate the performance of a classification model. It provides a detailed breakdown of predictions by showing the counts of True Positives, True Negatives, False Positives, and False Negatives. Though not explicitly plotted, the `classification_report` in this notebook provides metrics (like precision and recall) that are derived directly from the values in a confusion matrix.
+
+---
+---
