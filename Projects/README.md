@@ -817,11 +817,11 @@ This interactive map is an immediately actionable tool for various business unit
 ---
 # AI-Powered Customer Segmentation with K-Means and PCA
 
-This project uses **unsupervised machine learning** to perform customer segmentation on a real-world wholesale customer dataset [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb]. By analyzing the purchasing patterns across different product categories, the model automatically groups similar customers together into distinct segments.
+This project uses **unsupervised machine learning** to perform customer segmentation on a real-world wholesale customer dataset. By analyzing the purchasing patterns across different product categories, the model automatically groups similar customers together into distinct segments.
 
 The core of the analysis involves two key techniques:
-1. **K-Means Clustering**: To discover the customer segments [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb].
-2. **Principal Component Analysis (PCA)**: For dimensionality reduction, enabling a clear and intuitive 2D visualization of the high-dimensional data [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb].
+1. **K-Means Clustering**: To discover the customer segments.
+2. **Principal Component Analysis (PCA)**: For dimensionality reduction, enabling a clear and intuitive 2D visualization of the high-dimensional data.
 
 The final output is a set of data-driven **customer personas**, which can be used to inform targeted marketing, sales, and product strategies.
 
@@ -842,28 +842,28 @@ A "one-size-fits-all" approach to marketing and sales is inefficient. Customer s
 The project follows a complete pipeline for unsupervised customer segmentation.
 
 ### 1. Data Loading and Preparation
-* The "Wholesale Customer" dataset is loaded from a CSV file [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb].
-* **Exploratory Data Analysis (EDA)** is performed to understand the distribution of spending across product categories like `Fresh`, `Milk`, `Grocery`, etc [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb].
+* The "Wholesale Customer" dataset is loaded from a CSV file.
+* **Exploratory Data Analysis (EDA)** is performed to understand the distribution of spending across product categories like `Fresh`, `Milk`, `Grocery`, etc.
 
 ### 2. Data Preprocessing
-* **Feature Scaling**: The spending data is normalized using a `StandardScaler`. This is a crucial step for K-Means, as the algorithm is distance-based and requires all features to be on a similar scale to avoid bias towards categories with larger spending values [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb].
+* **Feature Scaling**: The spending data is normalized using a `StandardScaler`. This is a crucial step for K-Means, as the algorithm is distance-based and requires all features to be on a similar scale to avoid bias towards categories with larger spending values.
 
 ### 3. Determining the Optimal Number of Clusters
-* The **Elbow Method** is used to find the optimal number of clusters (`k`) for the K-Means algorithm [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb].
-* This involves running K-Means for a range of `k` values (e.g., 1 to 10) and plotting the "within-cluster sum of squares" (inertia). The "elbow" point on the plot represents the point of diminishing returns, indicating the best balance between model complexity and explanatory power. In this project, the elbow was identified at **k=5** [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb]. 
+* The **Elbow Method** is used to find the optimal number of clusters (`k`) for the K-Means algorithm.
+* This involves running K-Means for a range of `k` values (e.g., 1 to 10) and plotting the "within-cluster sum of squares" (inertia). The "elbow" point on the plot represents the point of diminishing returns, indicating the best balance between model complexity and explanatory power. In this project, the elbow was identified at **k=5**. 
 
 ### 4. K-Means Clustering
-* A **K-Means** model is trained on the scaled data with `k=5` [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb].
+* A **K-Means** model is trained on the scaled data with `k=5`.
 * The algorithm iteratively assigns each customer to the nearest cluster center, automatically grouping them into 5 distinct segments based on their purchasing behavior.
 
 ### 5. Dimensionality Reduction & Visualization (PCA)
 * The original dataset has 6 dimensions (one for each product category), making it impossible to visualize directly.
-* **Principal Component Analysis (PCA)** is used to reduce these 6 dimensions down to just 2 principal components, while retaining as much of the original data's variance as possible [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb].
-* A 2D scatter plot is created using these two new components, with each customer colored by their assigned K-Means cluster ID. This provides a powerful and intuitive visualization of the customer segments [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb]. 
+* **Principal Component Analysis (PCA)** is used to reduce these 6 dimensions down to just 2 principal components, while retaining as much of the original data's variance as possible.
+* A 2D scatter plot is created using these two new components, with each customer colored by their assigned K-Means cluster ID. This provides a powerful and intuitive visualization of the customer segments. 
 
 ### 6. Persona Creation
-* The final and most strategic step is to analyze the average purchasing behavior of each discovered cluster [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb].
-* By examining which product categories each segment spends the most on, we can create descriptive **customer personas**. For example, a segment with high spending on `Fresh` and `Grocery` might be labeled "Retailers," while a segment with high spending across all categories could be "Super Spenders" [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb].
+* The final and most strategic step is to analyze the average purchasing behavior of each discovered cluster.
+* By examining which product categories each segment spends the most on, we can create descriptive **customer personas**. For example, a segment with high spending on `Fresh` and `Grocery` might be labeled "Retailers," while a segment with high spending across all categories could be "Super Spenders."
 
 ---
 
@@ -871,151 +871,19 @@ The project follows a complete pipeline for unsupervised customer segmentation.
 
 * **Customer Segmentation**: The process of dividing a customer base into groups of individuals that are similar in specific ways relevant to marketing, such as age, gender, interests, and spending habits.
 * **Unsupervised Learning**: A type of machine learning where the model is trained on data without explicit labels. The goal is to discover hidden patterns or structures in the data on its own.
-* **K-Means Clustering**: A popular unsupervised algorithm that partitions a dataset into a predefined number (`k`) of clusters, where each data point belongs to the cluster with the nearest mean (cluster centroid) [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb].
-* **PCA (Principal Component Analysis)**: A statistical procedure used for dimensionality reduction. It transforms a set of correlated variables into a smaller set of uncorrelated variables called principal components [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb].
+* **K-Means Clustering**: A popular unsupervised algorithm that partitions a dataset into a predefined number (`k`) of clusters, where each data point belongs to the cluster with the nearest mean (cluster centroid).
+* **PCA (Principal Component Analysis)**: A statistical procedure used for dimensionality reduction. It transforms a set of correlated variables into a smaller set of uncorrelated variables called principal components.
 
 ---
 
 ## Results & Business Application
 
-The analysis successfully identified 5 distinct and actionable customer segments, which were translated into strategic personas like "High-Value Retailers," "Cafes/Restaurants," and "Low-Value Generalists" [cite: uploaded:AI_Powered_Customer_Segmentation_with_K_Means_and_PCA(2).ipynb].
+The analysis successfully identified 5 distinct and actionable customer segments, which were translated into strategic personas like "High-Value Retailers," "Cafes/Restaurants," and "Low-Value Generalists."
 
-This segmentation provides a direct roadmap for a business:
+This segmentation provides a direct road
+map for a business:
 * A **marketing team** can now design tailored campaigns for each persona.
 * A **sales team** can focus their efforts on nurturing the "High-Value Retailers."
 * A **product development team** can use the insights to better meet the needs of the most profitable segments.
-
----
----
-
-# E-commerce Conversion Prediction with Machine Learning
-
-This project develops a high-performance machine learning model to predict whether an online shopping session will result in a purchase (`Revenue`). Using the "Online Shoppers Purchasing Intention" dataset, it trains a **LightGBM classifier** to analyze user session metrics and forecast the likelihood of conversion.
-
-The project emphasizes a robust machine learning workflow, including detailed exploratory data analysis (EDA), a sophisticated preprocessing pipeline to handle mixed data types, and careful handling of class imbalance to ensure the model is effective.
-
----
-
-## Strategic Value & Purpose
-
-For any e-commerce business, a small increase in the conversion rate can lead to a significant increase in revenue. The purpose of this project is to create a tool that can:
-* **Identify High-Intent Users**: The model can flag users who are showing signs of being likely to purchase, allowing for real-time interventions like targeted offers or proactive chat support.
-* **Optimize Marketing Spend**: By understanding the key drivers of conversion, marketing teams can focus their efforts on the channels and user behaviors that are most likely to lead to a sale.
-* **Improve User Experience**: The insights from the model can be used to identify points of friction on the website (e.g., pages where users frequently drop off) and optimize the user journey.
-
----
-
-## Methodology Workflow
-
-The project follows a complete data science pipeline for building a robust classification system.
-
-### 1. Data Loading and Preparation
-* The "Online Shoppers Purchasing Intention" dataset is loaded from a CSV file [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb].
-* Initial data cleaning is performed, including renaming columns for clarity [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb].
-
-### 2. Exploratory Data Analysis (EDA)
-* The distribution of the target variable (`Revenue`) is analyzed, revealing a significant **class imbalance**: only about 15% of sessions result in a purchase [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb]. This is a critical insight for model training.
-* Various plots are created to explore the relationships between different user behaviors and the likelihood of conversion. For example, analysis shows that the `PageValues` feature (the average value of pages visited by the user) is a very strong predictor of purchase [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb]. 
-
-### 3. Preprocessing Pipeline
-* The dataset is split into features (`X`) and the target variable (`y`) [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb].
-* A sophisticated **`ColumnTransformer`** pipeline is built to handle the mixed-type data [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb]:
-    * **Numerical Features**: `StandardScaler` is applied to scale all numerical features to a consistent range [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb].
-    * **Categorical Features**: `OneHotEncoder` is used to convert categorical columns (like `Month` and `VisitorType`) into a numerical format the model can understand [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb].
-
-### 4. Model Training
-* The data is split into training (80%) and testing (20%) sets [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb].
-* A **LightGBM Classifier** is trained on the data. A key parameter, `scale_pos_weight`, is used to address the class imbalance. This tells the model to give more importance to the less frequent but more valuable "purchase" class during training [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb].
-
-### 5. Evaluation
-* The trained model is evaluated on the unseen test set using several standard metrics [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb]:
-    * **Accuracy Score**: The overall percentage of correct predictions.
-    * **ROC AUC Score**: A robust measure of the model's ability to distinguish between the two classes.
-    * **Classification Report**: A detailed report showing the **precision, recall, and F1-score** for both the purchase and non-purchase classes.
-    * **Confusion Matrix**: A visual breakdown of the model's predictions.
-
----
-
-## Key Concepts Explained
-
-* **Conversion Rate**: The percentage of users who take a desired action, in this case, making a purchase.
-* **LightGBM**: A high-performance, open-source gradient boosting framework that uses tree-based learning algorithms. It is known for its speed and efficiency.
-* **Class Imbalance**: A common problem in classification where the different classes are not represented equally in the dataset.
-* **One-Hot Encoding**: A technique for converting categorical variables into a numerical format that can be provided to machine learning algorithms.
-
----
-
-## Results & Conclusion
-
-The trained LightGBM model demonstrated strong predictive power, achieving an overall **accuracy of 89%** and a **ROC AUC score of 0.90** on the test set [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb]. The detailed classification report shows that the model is effective at identifying sessions that will result in a purchase.
-
-This project successfully demonstrates that a well-tuned machine learning model, combined with a robust preprocessing pipeline, can serve as a highly effective tool for predicting e-commerce conversion, providing actionable insights for businesses to increase revenue and improve customer experience.
 	
----
----
-# E-commerce Conversion Prediction with Machine Learning
-
-This project develops a high-performance machine learning model to predict whether an online shopping session will result in a purchase (`Revenue`). Using the "Online Shoppers Purchasing Intention" dataset, it trains a **LightGBM classifier** to analyze user session metrics and forecast the likelihood of conversion.
-
-The project emphasizes a robust machine learning workflow, including detailed exploratory data analysis (EDA), a sophisticated preprocessing pipeline to handle mixed data types, and careful handling of class imbalance to ensure the model is effective.
-
----
-
-## Strategic Value & Purpose
-
-For any e-commerce business, a small increase in the conversion rate can lead to a significant increase in revenue. The purpose of this project is to create a tool that can:
-* **Identify High-Intent Users**: The model can flag users who are showing signs of being likely to purchase, allowing for real-time interventions like targeted offers or proactive chat support.
-* **Optimize Marketing Spend**: By understanding the key drivers of conversion, marketing teams can focus their efforts on the channels and user behaviors that are most likely to lead to a sale.
-* **Improve User Experience**: The insights from the model can be used to identify points of friction on the website (e.g., pages where users frequently drop off) and optimize the user journey.
-
----
-
-## Methodology Workflow
-
-The project follows a complete data science pipeline for building a robust classification system.
-
-### 1. Data Loading and Preparation
-* The "Online Shoppers Purchasing Intention" dataset is loaded from a CSV file [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb].
-* Initial data cleaning is performed, including renaming columns for clarity [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb].
-
-### 2. Exploratory Data Analysis (EDA)
-* The distribution of the target variable (`Revenue`) is analyzed, revealing a significant **class imbalance**: only about 15% of sessions result in a purchase [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb]. This is a critical insight for model training.
-* Various plots are created to explore the relationships between different user behaviors and the likelihood of conversion. For example, analysis shows that the `PageValues` feature (the average value of pages visited by the user) is a very strong predictor of purchase [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb]. 
-
-### 3. Preprocessing Pipeline
-* The dataset is split into features (`X`) and the target variable (`y`) [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb].
-* A sophisticated **`ColumnTransformer`** pipeline is built to handle the mixed-type data [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb]:
-    * **Numerical Features**: `StandardScaler` is applied to scale all numerical features to a consistent range [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb].
-    * **Categorical Features**: `OneHotEncoder` is used to convert categorical columns (like `Month` and `VisitorType`) into a numerical format the model can understand [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb].
-
-### 4. Model Training
-* The data is split into training (80%) and testing (20%) sets [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb].
-* A **LightGBM Classifier** is trained on the data. A key parameter, `scale_pos_weight`, is used to address the class imbalance. This tells the model to give more importance to the less frequent but more valuable "purchase" class during training [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb].
-
-### 5. Evaluation
-* The trained model is evaluated on the unseen test set using several standard metrics [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb]:
-    * **Accuracy Score**: The overall percentage of correct predictions.
-    * **ROC AUC Score**: A robust measure of the model's ability to distinguish between the two classes.
-    * **Classification Report**: A detailed report showing the **precision, recall, and F1-score** for both the purchase and non-purchase classes.
-    * **Confusion Matrix**: A visual breakdown of the model's predictions.
-
----
-
-## Key Concepts Explained
-
-* **Conversion Rate**: The percentage of users who take a desired action, in this case, making a purchase.
-* **LightGBM**: A high-performance, open-source gradient boosting framework that uses tree-based learning algorithms. It is known for its speed and efficiency.
-* **Class Imbalance**: A common problem in classification where the different classes are not represented equally in the dataset.
-* **One-Hot Encoding**: A technique for converting categorical variables into a numerical format that can be provided to machine learning algorithms.
-
----
-
-## Results & Conclusion
-
-The trained LightGBM model demonstrated strong predictive power, achieving an overall **accuracy of 89%** and a **ROC AUC score of 0.90** on the test set [cite: uploaded:E_commerce_Conversion_Prediction_with_Machine_Learning(1) (1).ipynb]. The detailed classification report shows that the model is effective at identifying sessions that will result in a purchase.
-
-This project successfully demonstrates that a well-tuned machine learning model, combined with a robust preprocessing pipeline, can serve as a highly effective tool for predicting e-commerce conversion, providing actionable insights for businesses to increase revenue and improve customer experience.
-	
----
-
 
