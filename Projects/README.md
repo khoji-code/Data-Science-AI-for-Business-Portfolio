@@ -423,3 +423,69 @@ This allows the model to make predictions based on both a node's own history and
 
 ---
 ---
+# Predictive Maintenance for NASA Turbofan Engines using a Bi-LSTM Network
+
+This project demonstrates the application of deep learning for **predictive maintenance**. It builds and trains a **Bidirectional Long Short-Term Memory (Bi-LSTM)** network to accurately predict the **Remaining Useful Life (RUL)** of NASA turbofan jet engines based on time-series sensor data.
+
+The model learns to identify patterns of degradation from the engine sensor readings, providing a forecast that enables maintenance to be performed proactively, before a failure occurs.
+
+---
+
+## Strategic Value & Purpose
+
+In industries like aviation, manufacturing, and energy, unexpected equipment failure can be catastrophic and extremely costly. Predictive maintenance aims to solve this by shifting from a reactive ("fix it when it breaks") or scheduled ("fix it every 1000 hours") approach to a proactive, data-driven one.
+
+The goal of this project is to create an intelligent system that can:
+* **Forecast Failures**: Predict the RUL of an engine with high accuracy.
+* **Increase Safety**: Prevent in-service failures by scheduling maintenance before the predicted end-of-life.
+* **Optimize Maintenance**: Reduce costs by avoiding unnecessary scheduled maintenance on healthy engines.
+
+---
+
+## Methodology Workflow
+
+The project follows a standard time-series deep learning pipeline:
+
+### 1. Data Loading and Preparation
+* The NASA C-MAPSS dataset (`train_FD001.txt`, `test_FD001.txt`, `RUL_FD001.txt`) is loaded. This data contains the operational history of 100 turbofan engines run to failure in a simulation.
+* Each record includes the engine unit number, the current operational cycle (time), 3 operational settings, and 21 sensor readings.
+
+### 2. Feature Engineering
+* The most critical feature, the **Remaining Useful Life (RUL)**, is calculated for the training data. The RUL at any given cycle is the total lifespan of the engine minus its current age (in cycles).
+* A domain-specific technique of **RUL capping** is applied. The RUL is clipped at a maximum value of 125 cycles. This forces the model to focus on the period where sensor data shows clear signs of degradation, rather than the long, stable period of early life.
+
+### 3. Data Preprocessing
+* **Feature Scaling**: The sensor and operational setting data are normalized using a `MinMaxScaler`. This rescales all features to a consistent range (0 to 1), which improves the stability and speed of neural network training.
+* **Time-Series Sequencing**: The flat time-series data is transformed into sequences of a fixed length (50 cycles). This creates "clips" of engine history that the LSTM model can learn from, where each 50-cycle sequence is used to predict the RUL at the end of that sequence. 
+
+### 4. Model Building
+* A **Bidirectional LSTM (Bi-LSTM)** network is built using TensorFlow/Keras. This advanced architecture is chosen for its ability to learn from the sequence data in both the forward and backward directions, allowing it to capture a more complete picture of the temporal patterns.
+* The model consists of two stacked Bi-LSTM layers and a final `Dense` output layer with a single neuron for the RUL prediction.
+* **Mean Squared Error (MSE)** is used as the loss function, as this is a standard regression problem.
+
+### 5. Training and Evaluation
+* The model is trained for 100 epochs on the prepared training sequences.
+* The training and validation loss are plotted to ensure the model is learning effectively without overfitting.
+* The final trained model is used to make predictions on the unseen test set. The performance is evaluated using standard regression metrics:
+    * **Mean Absolute Error (MAE)**
+    * **Root Mean Squared Error (RMSE)**
+    * **R-squared (R²)** score
+
+---
+
+## Key Concepts Explained
+
+* **Predictive Maintenance**: The practice of using data analysis and machine learning techniques to detect anomalies and predict equipment failures in advance.
+* **Remaining Useful Life (RUL)**: A prediction of how much longer a piece of equipment (in this case, an engine) will be able to operate before it is likely to fail.
+* **LSTM (Long Short-Term Memory)**: A special type of Recurrent Neural Network (RNN) that is exceptionally good at learning patterns from sequential data, like time-series or text. It has internal "memory cells" that allow it to remember important information over long sequences.
+* **Bidirectional LSTM (Bi-LSTM)**: An extension of the standard LSTM. A Bi-LSTM processes the sequence data in both the forward (past to future) and backward (future to past) directions. This allows it to capture a more complete context when making a prediction at any given time step. 
+
+---
+
+## Results
+
+The trained Bi-LSTM model demonstrate
+d strong performance on the test set, achieving an **R² score of 0.697** and a **Root Mean Squared Error (RMSE) of approximately 17.8 cycles**. This indicates that the model's predictions are, on average, within about 18 cycles of the true RUL, providing a valuable and actionable forecast for scheduling maintenance. The detailed performance plots in the notebook show a strong positive correlation between the predicted and true RUL values.
+	
+---
+---
