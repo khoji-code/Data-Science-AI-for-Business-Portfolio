@@ -489,3 +489,74 @@ d strong performance on the test set, achieving an **R² score of 0.697** and a 
 	
 ---
 ---
+# Discovering Product Ecosystems with Network Analysis
+
+This project uses **Network Analysis** to uncover the hidden relationships between products based on customer co-purchase behavior. By transforming a raw transaction log from an online retail dataset into a product network, this analysis identifies the most influential "hub" products and automatically discovers natural "product ecosystems"—groups of items that are frequently bought together.
+
+The final output is a rich, interactive visualization of the product network and a data-driven map of these ecosystems, providing deep strategic insights for marketing, merchandising, and recommendation systems.
+
+---
+
+## The Problem: Beyond Bestsellers
+
+Standard sales analysis can easily identify top-selling products. However, it often fails to reveal the *context* of those sales. Understanding which products are purchased *together* is crucial for optimizing store layout, creating effective product bundles, and building a smart recommendation engine.
+
+**Network Analysis** is a powerful technique that models a system as a graph of interconnected nodes, making it the perfect tool to explore these co-purchase relationships.
+
+---
+
+## Methodology Workflow
+
+The project follows a multi-stage pipeline to transform transaction data into an actionable product network:
+
+### 1. Data Preparation
+* The "Online Retail" dataset is loaded from an Excel file.
+* Essential data cleaning is performed, including removing returns (negative quantity) and transactions without a `CustomerID`.
+
+### 2. Transaction Basket Creation
+* The core data transformation step is performed here. The row-by-row transaction log is grouped by `InvoiceNo` to create "baskets"—a list of all products purchased in a single transaction. This is the foundational step for counting co-purchases. 
+
+### 3. Network Construction
+* The `networkx` library is used to build a co-purchase graph:
+    * **Nodes**: Each unique product becomes a node in the network.
+    * **Edges**: A connection (edge) is created between any two products that appear in the same basket.
+    * **Weights**: The "weight" of each edge is the number of times the two connected products were purchased together. A higher weight signifies a stronger relationship.
+
+### 4. Network Analysis
+Once the graph is built, two key analyses are performed:
+
+* **Centrality Analysis**: This quantitatively identifies the most important products in the network. Three metrics are calculated:
+    * **Degree Centrality**: Measures how many direct connections a product has (a measure of its general popularity in baskets).
+    * **Betweenness Centrality**: Identifies "bridge" products that connect different parts of the network.
+    * **Eigenvector Centrality**: Measures a product's influence based on its connection to *other influential products*.
+
+* **Community Detection**: This analysis automatically discovers clusters of densely connected products within the network.
+    * The **Louvain algorithm** is used to partition the graph into communities. These communities represent "product ecosystems"—natural groupings of items that fulfill a common customer need (e.g., a "baking ecosystem" or a "tea time ecosystem").
+
+### 5. Visualization
+* The final product network, with nodes colored by their detected community, is visualized using the `plotly` library. This creates a powerful, interactive graph that allows for deep exploration of the product catalog's structure. 
+
+---
+
+## Key Concepts Explained
+
+* **Network Analysis**: A field of data science that studies relationships between entities by modeling them as a graph with nodes and edges.
+* **Nodes and Edges**: The fundamental components of a graph. In this project, nodes are products and edges represent co-purchases.
+* **Centrality Metrics**: A set of measures used to quantify the importance or influence of a node within a network.
+* **Community Detection**: An unsupervised algorithm used in network science to find clusters (communities) of nodes that are more densely connected to each other than to the rest of the network.
+* **Louvain Algorithm**: A popular and highly efficient method for community detection in large networks.
+
+---
+
+## Results & Business Applications
+
+The analysis successfully identified several key products and distinct product ecosystems. For example, it found central "hub" products like "JUMBO BAG RED RETROSPOT" and discovered clear communities related to themes like "afternoon tea" and "children's party supplies".
+
+These insights can be directly applied to drive business value:
+* **Merchandising**: Create data-driven product bundles and promotions based on the discovered ecosystems.
+* **Store Layout/UX**: Place co-purchased items near each other in a physical store or on a website to increase cross-selling.
+* **Recommendation Engines**: Build a more sophisticated recommendation system that suggests items from the same product ecosystem.
+* **Inventory Management**: Understand how the stock levels of one key product can impact the sales of related items.
+	
+---
+---
