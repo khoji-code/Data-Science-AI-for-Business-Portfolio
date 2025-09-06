@@ -78,7 +78,7 @@ The projects are tiered, from the most technically advanced and research-aligned
     * Applied K-Means clustering to discover 5 distinct customer segments from purchasing data.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931A?logo=scikit-learn&logoColor=white) ![Unsupervised Learning](https://img.shields.io/badge/Unsupervised-darkorange)
 
-15. **[E-commerce Conversion Prediction](Projects/E_commerce_conversion_prediction_with_machine_learning.ipynb)**
+15. **[E-commerce Conversion Prediction](Projects/E_commerce_Conversion_Prediction_with_Machine_Learning.ipynb)**
     * Predicted online shopping conversion with a ROC AUC score of 0.90.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LightGBM](https://img.shields.io/badge/LightGBM-B90948) ![E-commerce](https://img.shields.io/badge/E--commerce-brightgreen)
 
