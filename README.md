@@ -58,7 +58,7 @@ The projects are tiered, from the most technically advanced and research-aligned
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![NetworkX](https://img.shields.io/badge/NetworkX-2A78B0) ![Graph Analysis](https://img.shields.io/badge/Graph_Analysis-blueviolet)
 
 10. **[Real-Time IoT Intrusion Detection](Projects/Real_Time_IoT_Intrusion_Detection.ipynb)**
-    * Classified cyberattacks in IoT network traffic with 96% F1-score while handling severe class imbalance.
+    * Classified cyberattacks in IoT network traffic with 98% F1-score while handling severe class imbalance.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931A?logo=scikit-learn&logoColor=white) ![LightGBM](https://img.shields.io/badge/LightGBM-B90948) ![Cybersecurity](https://img.shields.io/badge/Cybersecurity-darkred)
 
 11. **[Fraud Detection with a TensorFlow LSTM Autoencoder](Projects/Fraud_Detection_with_a_TensorFlow_LSTM_Autoencoder.ipynb)**
