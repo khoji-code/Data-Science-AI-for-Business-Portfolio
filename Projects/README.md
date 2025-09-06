@@ -696,3 +696,65 @@ The LSTM Autoencoder proved to be a highly effective anomaly detector. By settin
 	
 ---
 ---
+# Predicting a Customer's Next Action in an Online Shopping Clickstream
+
+This project uses a deep learning sequence model to predict the next action a customer will take based on their real-time browsing behavior (clickstream) on an e-commerce website. By analyzing the sequence of events in a user's session, the model learns to anticipate their immediate next step, such as viewing another product, adding an item to the cart, or proceeding to checkout.
+
+The core of the model is a **Long Short-Term Memory (LSTM)** network, a type of recurrent neural network that is exceptionally well-suited for learning patterns from sequential data.
+
+---
+
+## Strategic Value & Purpose
+
+Understanding and predicting user behavior in real-time is crucial for personalizing the online shopping experience and optimizing conversion rates. This project provides the foundation for a system that can:
+
+* **Proactively Personalize the User Experience**: If the model predicts a user is likely to `view_cart`, the website could dynamically display a more prominent "Checkout" button.
+* **Prevent Cart Abandonment**: If a user's actions suggest they might leave the site after adding an item to the cart, a timely promotional offer or a "related items" recommendation could be triggered.
+* **Optimize Website Flow**: By analyzing common user paths and prediction outcomes, businesses can identify points of friction in the user journey and improve the website's layout and navigation.
+
+---
+
+## Methodology Workflow
+
+The project follows a complete pipeline for building and training a sequence-based prediction model.
+
+### 1. Data Loading and EDA
+* The e-commerce clickstream dataset is loaded. It contains user sessions with a sequence of events like `view`, `cart`, and `purchase` [cite: uploaded:Predicting_Customer's_Next_Action_in_an_Online_Shopping_Clickstream(1).ipynb].
+* **Exploratory Data Analysis (EDA)** is performed to understand the data's characteristics. This includes visualizing the distribution of different event types and analyzing the lengths of user sessions, which are crucial insights for preparing the sequence data [cite: uploaded:Predicting_Customer's_Next_Action_in_an_Online_Shopping_Clickstream(1).ipynb].
+
+### 2. Data Preprocessing
+This is the most critical phase for preparing the data for the LSTM model.
+* **Session Creation**: The raw event log is grouped by `session_id` to create individual user journeys [cite: uploaded:Predicting_Customer's_Next_Action_in_an_Online_Shopping_Clickstream(1).ipynb].
+* **Label Encoding**: The text-based event names (e.g., `'cart'`, `'view'`) are converted into numerical integers using a `LabelEncoder`. This is necessary as neural networks can only work with numerical data [cite: uploaded:Predicting_Customer's_Next_Action_in_an_Online_Shopping_Clickstream(1).ipynb].
+* **Sequence Generation**: The long sessions are transformed into smaller, fixed-length input sequences. For example, a sequence of the first 5 actions in a session is used to predict the 6th action. This process is repeated, creating many training examples from the original sessions [cite: uploaded:Predicting_Customer's_Next_Action_in_an_Online_Shopping_Clickstream(1).ipynb].
+* **Padding**: Since user sessions have varying lengths, `pad_sequences` is used to ensure that every input sequence fed to the LSTM has the exact same length. Shorter sequences are padded with zeros [cite: uploaded:Predicting_Customer's_Next_Action_in_an_Online_Shopping_Clickstream(1).ipynb]. 
+
+### 3. Model Building (LSTM)
+* A sequential deep learning model is built using TensorFlow/Keras with the following key layers [cite: uploaded:Predicting_Customer's_Next_Action_in_an_Online_Shopping_Clickstream(1).ipynb]:
+    * **Embedding Layer**: This is the first layer. Instead of using the simple integer-encoded events, this layer learns a dense, meaningful vector representation for each unique event type. This helps the model understand the relationships between different actions.
+    * **LSTM Layer**: The core of the model. This recurrent layer processes the sequence of event vectors, learning the temporal patterns and dependencies between actions in the clickstream.
+    * **Dense (Output) Layer**: The final layer with a `softmax` activation function. It outputs a probability distribution over all possible next actions, allowing the model to make its final prediction.
+
+### 4. Training and Evaluation
+* The model is trained on the prepared sequence data for 10 epochs [cite: uploaded:Predicting_Customer's_Next_Action_in_an_Online_Shopping_Clickstream(1).ipynb].
+* The model's performance is evaluated on an unseen test set using [cite: uploaded:Predicting_Customer's_Next_Action_in_an_Online_Shopping_Clickstream(1).ipynb]:
+    * **Accuracy Score**: The overall percentage of correct next-action predictions.
+    * **Classification Report**: A detailed breakdown of precision, recall, and F1-score for each event type.
+    * **Confusion Matrix**: A visual matrix showing which actions the model predicted correctly and which ones it tended to confuse.
+
+---
+
+## Key Concepts Explained
+
+* **Clickstream Analysis**: The process of analyzing the path a user takes through a website, which is represented as a sequence of clicks or events.
+* **LSTM (Long Short-Term Memory)**: A special type of Recurrent Neural Network (RNN) that is excellent at learning patterns from sequential data. It has internal "memory cells" that allow it to remember important information over long sequences, making it ideal for understanding user journeys [cite: uploaded:Predicting_Customer's_Next_Action_in_an_Online_Shopping_Clickstream(1).ipynb]. 
+* **Embedding Layer**: A deep learning layer used in NLP and sequence modeling that learns a dense vector representation for each item in a vocabulary (e.g., each event type). This allows the model to capture the semantic similarity between items.
+* **Padding**: The process of adding a special value (usually zero) to shorter sequences to ensure that all sequences in a batch have the same length, which is a requirement for training deep learning models.
+
+---
+
+## Results
+
+The trained LSTM model demonstrated a strong ability to predict the next user action, achieving a high **accuracy of 96.6%** on the test set [cite: uploaded:Predicting_Customer's_Next_Action_in_an_Online_Shopping_Clickstream(1).ipynb]. The confusion matrix and classification report confirmed that the model was particularly effective at predicting the most frequent and important user actions [cite: uploaded:Predicting_Customer's_Next_Action_in_an_Online_Shopping_Clickstream(1).ipynb]. This project successfully shows that LSTMs are a powerful tool for understanding and predicting sequential user behavior in an e-commerce environment.
+---
+---
