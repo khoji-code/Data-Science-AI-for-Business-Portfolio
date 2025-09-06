@@ -627,3 +627,72 @@ This project successfully demonstrates that a well-tuned machine learning model,
 
 ---
 ---
+# Fraud Detection with a TensorFlow LSTM Autoencoder
+
+This project builds an advanced **anomaly detection system** to identify fraudulent credit card transactions from a real-world dataset. It uses an **unsupervised learning** approach, training a deep learning model exclusively on normal (non-fraudulent) transactions to learn what "normal" behavior looks like.
+
+The core of the model is a **TensorFlow LSTM Autoencoder**, a type of neural network excellent at learning sequential patterns in data. Fraud is detected by calculating the **"reconstruction error"**: the model tries to reconstruct each transaction it sees, and fraudulent transactions, being different from the normal patterns it learned, result in a high error.
+
+---
+
+## Strategic Value & Purpose
+
+Fraud detection is a critical task where fraudulent transactions are rare compared to legitimate ones. Traditional supervised methods often struggle with this severe class imbalance. This project's unsupervised approach offers a powerful alternative:
+
+* **No Need for Labeled Fraud Data for Training**: The model learns the deep patterns of *normal* behavior, which is abundant, rather than trying to learn from the few available fraud examples.
+* **Detects New Types of Fraud**: Because the model identifies anything that deviates from the norm, it can flag new, unseen types of fraud that a supervised model trained on past fraud types might miss.
+* **Scalable and Real-Time**: This architecture can be deployed to provide real-time risk scoring for incoming transactions, helping to prevent financial losses and protect customers.
+
+---
+
+## Methodology Workflow
+
+The project follows a complete deep learning pipeline for anomaly detection:
+
+### 1. Data Loading and EDA
+* Loads the Kaggle "Credit Card Fraud Detection" dataset.
+* **Exploratory Data Analysis (EDA)** reveals a severe **class imbalance**: only 0.17% of the transactions are fraudulent. This key insight justifies the use of an unsupervised, anomaly detection approach.
+
+### 2. Data Preprocessing
+* The transaction `Amount` feature is scaled using `StandardScaler` to ensure it doesn't dominate other features.
+* The data is then split into three sets:
+    1. A training set containing **only normal transactions**.
+    2. A testing set containing both normal and fraudulent transactions.
+    3. A validation set for monitoring training.
+
+### 3. Sequence Creation
+* A helper function is used to transform the data into **time-series sequences**. This is a crucial step for the LSTM model, which learns from patterns over a sequence of events, not just a single transaction.
+
+### 4. Model Building (LSTM Autoencoder)
+* A sophisticated **LSTM Autoencoder** is built using TensorFlow/Keras. This model has two main parts:
+    * **Encoder**: A stack of LSTM layers that reads an input sequence and compresses it into a smaller, dense representation (a "bottleneck").
+    * **Decoder**: A stack of LSTM layers that attempts to reconstruct the original input sequence from the compressed representation. 
+
+### 5. Training
+* The autoencoder is trained **exclusively on the sequences of normal transactions**. The goal of the training is to teach the model to become very good at reconstructing normal data, minimizing the reconstruction error (Mean Absolute Error).
+* The training and validation loss are plotted to ensure the model learns effectively without overfitting.
+
+### 6. Anomaly Detection and Evaluation
+* The trained model is used to calculate the **reconstruction error** for every transaction in the test set.
+* The key insight is that the model will be good at reconstructing normal transactions (resulting in a low error) but poor at reconstructing fraudulent transactions (resulting in a high error).
+* A **threshold** is determined from the distribution of errors. Any transaction with an error above this threshold is flagged as fraudulent.
+* The model's performance is evaluated using a **confusion matrix** and a **classification report**, demonstrating high **precision** and **recall** for the critical fraud class.
+
+---
+
+## Key Concepts Explained
+
+* **Anomaly Detection**: The task of identifying data points that deviate significantly from the majority of the data. In this context, fraudulent transactions are the anomalies.
+* **Unsupervised Learning**: A type of machine learning where the model is trained on data without explicit labels. Here, the model learns the structure of normal data without being told which transactions are fraudulent.
+* **Autoencoder**: A type of neural network trained to reconstruct its input. It's composed of an encoder that compresses the data and a decoder that uncompresses it.
+* **LSTM (Long Short-Term Memory)**: A special type of Recurrent Neural Network (RNN) that is excellent at learning patterns in sequential data. It has internal "memory cells" that allow it to remember important information over long sequences.
+* **Reconstruction Error**: The difference between the original input and the output reconstructed by the autoencoder. A high error indicates an anomaly.
+
+---
+
+## Results
+
+The LSTM Autoencoder proved to be a highly effective anomaly detector. By setting an appropriate threshold on the reconstruction error, the model was able to identify a majority of the fraudulent transactions while maintaining a low number of false positives. The confusion matrix and classification report confirm that this unsupervised deep learning approach is a powerful and viable solution for real-world fraud detection.
+	
+---
+---
