@@ -9,7 +9,6 @@
   </p>
 </div>
 ---
----
 
 ## Projects Showcase
 
