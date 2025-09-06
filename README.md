@@ -8,7 +8,7 @@
     A curated collection of 24 projects demonstrating the application of cutting-edge AI and data science to solve complex, real-world business challenges.
   </p>
 </div>
----
+
 
 ## Projects Showcase
 
