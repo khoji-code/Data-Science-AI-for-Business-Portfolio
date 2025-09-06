@@ -560,3 +560,70 @@ These insights can be directly applied to drive business value:
 	
 ---
 ---
+
+# Real-Time IoT Intrusion Detection using LightGBM
+
+This project develops a high-performance machine learning model for **real-time intrusion detection** in Internet of Things (IoT) networks. Using the comprehensive `RT-IoT2022` dataset, it trains a **LightGBM classifier** to accurately identify and categorize various types of cyberattacks, ranging from DDoS to port scanning.
+
+The project emphasizes a robust machine learning workflow, including advanced exploratory data analysis with PCA, a sophisticated preprocessing pipeline, and careful handling of class imbalance to ensure the model is effective in a real-world cybersecurity context.
+
+---
+
+## Strategic Value & Purpose
+
+As IoT devices become ubiquitous in homes, industries, and critical infrastructure, they are increasingly targeted by malicious actors. A reliable, real-time intrusion detection system is essential for protecting these networks. The goal of this project is to:
+* **Build a High-Accuracy Classifier**: Create a model that can distinguish between benign network traffic and various types of attacks with a high degree of precision.
+* **Enable Real-Time Detection**: Utilize a fast and efficient model (LightGBM) capable of analyzing network traffic and flagging threats as they occur.
+* **Provide Actionable Insights**: The multi-class nature of the model provides security analysts with specific information about the type of attack, enabling a faster and more effective response.
+
+---
+
+## Methodology Workflow
+
+The project is structured as a complete data science pipeline for building a robust classification system.
+
+### 1. Data Loading and Preparation
+* The `RT-IoT2022` dataset is loaded from a CSV file.
+* Initial data cleaning is performed, which includes removing a redundant `time` column.
+
+### 2. Exploratory Data Analysis (EDA)
+* The distribution of the target variable (`Attack_type`) is analyzed, revealing a significant **class imbalance**, where some attack types are far more frequent than others.
+* **Principal Component Analysis (PCA)** is used for dimensionality reduction. This technique condenses the 83 complex features into just two components, allowing the high-dimensional data to be visualized on a 2D scatter plot. The plot effectively shows that the different attack types form distinct clusters, indicating that they are separable and that a machine learning model is likely to perform well. 
+
+### 3. Preprocessing Pipeline
+* The dataset is split into features (`X`) and the target variable (`y`).
+* A sophisticated **`ColumnTransformer`** pipeline is built to handle the mixed-type data:
+    * **Numerical Features**: `StandardScaler` is applied to scale all numerical features to a consistent range.
+    * **Categorical Features**: `OneHotEncoder` is used to convert categorical columns (like `Protocol`) into a numerical format the model can understand.
+
+### 4. Model Training
+* The data is split into training (80%) and testing (20%) sets.
+* A **LightGBM Classifier** is trained on the data. A key parameter, `class_weight='balanced'`, is used to address the class imbalance. This tells the model to give more importance to the less frequent attack types during training, preventing it from becoming biased towards the most common ones.
+
+### 5. Evaluation
+* The trained model is evaluated on the unseen test set using several standard metrics:
+    * **Accuracy Score**: The overall percentage of correct predictions.
+    * **Classification Report**: A detailed report showing the **precision, recall, and F1-score** for each individual attack category. This is crucial for understanding the model's performance on the rarer attack types.
+    * **Confusion Matrix**: A visual breakdown of the model's predictions, showing which classes it is confusing with each other. The resulting matrix shows a strong diagonal, indicating very few misclassifications. 
+
+---
+
+## Key Concepts Explained
+
+* **Intrusion Detection System (IDS)**: A system that monitors network traffic for suspicious activity and alerts security personnel.
+* **Multi-Class Classification**: A classification task where each instance can be categorized into one of more than two classes.
+* **LightGBM**: A high-performance, open-source gradient boosting framework that uses tree-based learning algorithms. It is known for its speed and efficiency.
+* **Class Imbalance**: A common problem in classification where the different classes are not represented equally in the dataset.
+* **PCA (Principal Component Analysis)**: A statistical procedure used for dimensionality reduction. It transforms a set of correlated variables into a smaller set of uncorrelated variables called principal components.
+* **One-Hot Encoding**: A technique for converting categorical variables into a numerical format that can be provided to machine learning algorithms.
+
+---
+
+## Results & Conclusion
+
+The trained LightGBM model achieved outstanding performance on the test set, with an overall **accuracy of 99.98%**. The detailed classification report shows a macro-averaged **F1-score of 0.96**, indicating that the model performs exceptionally well across all attack categories, including the very rare ones.
+
+This project successfully demonstrates that a well-tuned machine learning model, combined with a robust preprocessing pipeline, can serve as a highly effective and reliable tool for real-time intrusion detection in complex IoT environments.
+
+---
+---
