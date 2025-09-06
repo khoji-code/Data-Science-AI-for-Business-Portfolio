@@ -755,3 +755,63 @@ This is the most critical phase for preparing the data for the LSTM model.
 
 ---
 ---
+# Geospatial Hotspot Analysis for Retail Strategy
+
+This project utilizes **geospatial analysis** to identify strategic "hotspots" of retail store concentration from a real-world dataset of over 25,000 Starbucks locations. The core of the analysis is an unsupervised machine learning algorithm called **DBSCAN**, which automatically discovers dense geographic clusters of stores.
+
+The final output is a visually compelling and **interactive Folium map** that plots every store location, with each identified cluster color-coded for easy interpretation. This transforms a simple list of addresses into a powerful tool for strategic decision-making.
+
+---
+
+## Strategic Value & Purpose
+
+Standard business reports can list store locations, but they often fail to reveal the strategic geographic patterns. This project addresses that gap by:
+* **Identifying Key Markets**: The discovered clusters represent the company's most concentrated markets, answering the critical business question, "Where are our key strategic assets located?"
+* **Informing Site Selection**: The map provides a data-driven foundation for planning new store openings, either by densifying an existing cluster or by identifying a promising location in an underserved area.
+* **Optimizing Marketing & Supply Chains**: The analysis can be used to tailor regional marketing campaigns and optimize logistics based on the geographic distribution of stores.
+
+---
+
+## Methodology Workflow
+
+The project follows a complete geospatial analysis pipeline:
+
+### 1. Data Loading and Preparation
+* The Starbucks store locations dataset is loaded from a CSV file.
+* Initial data cleaning is performed, including removing a small number of records with invalid latitude or longitude data.
+* **Exploratory Data Analysis (EDA)** is conducted to get a high-level overview, including a bar chart of the top countries by store count.
+
+### 2. Unsupervised Clustering with DBSCAN
+* The `DBSCAN` (Density-Based Spatial Clustering of Applications with Noise) algorithm is used to identify hotspots. DBSCAN is the ideal choice for this task because:
+    * It does **not require the number of clusters to be specified beforehand**.
+    * It can find clusters of **arbitrary shapes**, which is perfect for modeling how cities and towns are structured.
+    * It can identify **"noise" points**—stores that are isolated and don't belong to any dense cluster.
+* The algorithm's parameters (`eps` and `min_samples`) are tuned to define what constitutes a "dense" region. `eps` sets the maximum distance between two stores for them to be considered neighbors.
+
+### 3. Interactive Visualization with Folium
+* The final results are visualized using the `folium` library.
+* An interactive world map is created, centered on a global view.
+* Each Starbucks location is plotted on the map as a circle.
+* The color of each circle is determined by the cluster ID assigned by DBSCAN. This makes the geographic hotspots instantly visible as groups of same-colored points. 
+
+---
+
+## Key Concepts Explained
+
+* **Geospatial Analysis**: A field of data science focused on analyzing and visualizing data that has a geographic component, like latitude and longitude.
+* **DBSCAN**: An unsupervised clustering algorithm that groups together data points that are closely packed, marking as outliers points that lie alone in low-density regions.
+* **Folium**: A Python library used for creating interactive leaflet maps. It makes it easy to visualize data that has been manipulated in Python on an interactive map.
+
+---
+
+## Results & Business Applications
+
+The analysis successfully identified hundreds of distinct geographic clusters, clearly highlighting major metropolitan areas across North America, Europe, and Asia as the company's key markets.
+
+This interactive map is an immediately actionable tool for various business units:
+* A **real estate team** can use it to identify gaps in market coverage for new store placement.
+* A **marketing team** can design targeted, location-based advertising campaigns for specific clusters.
+* A **logistics team** can use the cluster information to optimize their supply chain and distribution routes.
+	
+---
+---
