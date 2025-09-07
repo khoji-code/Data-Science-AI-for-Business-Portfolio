@@ -1212,4 +1212,136 @@ This project successfully shows how a well-engineered set of time-series feature
 	
 ---
 ---
+# Time-Series Forecasting of Household Power Consumption
+
+This project develops a high-performance machine learning model to forecast daily household electricity consumption. Using the UCI "Household Electric Power Consumption" dataset, which contains several years of high-frequency energy usage data, it trains an **XGBoost Regressor** to predict the `Global_active_power`.
+
+The project emphasizes a robust time-series workflow, including extensive data preprocessing, in-depth exploratory data analysis (EDA) to uncover temporal patterns, and advanced feature engineering to capture time-based dependencies.
+
+---
+
+## Strategic Value & Purpose
+
+Accurate energy consumption forecasting is crucial for both consumers and utility providers. This project provides the foundation for a system that can:
+* **Enable Smart Home Energy Management**: The forecast can be used by smart home systems to automatically optimize appliance usage (e.g., running a dishwasher during predicted off-peak hours) to reduce electricity bills.
+* **Improve Power Grid Management**: Utility companies can use aggregated forecasts to better manage the power grid, ensuring a stable supply and preventing blackouts by anticipating demand peaks.
+* **Support Energy Policy and Planning**: The model's insights into consumption patterns can inform policies related to energy efficiency and renewable energy integration.
+
+---
+
+## Methodology Workflow
+
+The project follows a complete data science pipeline for building a state-of-the-art time-series forecasting model.
+
+### 1. Data Loading and Preparation
+* The household power consumption dataset is loaded from a text file.
+* **Extensive data preprocessing** is performed:
+    * The data is parsed correctly, combining `Date` and `Time` into a single datetime index.
+    * Missing values (represented by '?') are handled.
+    * The high-frequency (minute-by-minute) data is **resampled** to a daily frequency, which is more suitable for long-term forecasting.
+
+### 2. Exploratory Data Analysis (EDA)
+* The resampled daily time-series data is analyzed to understand its underlying patterns. Key visualizations include:
+    * **Seasonal Decomposition**: To separate the overall trend, seasonal (yearly) patterns, and residual noise in the power consumption data. 
+    * **Yearly and Quarterly Boxplots**: To visualize and compare the distribution of power usage across different time periods.
+
+### 3. Advanced Feature Engineering
+* This is a critical step for time-series forecasting. The raw data is enriched with new features designed to capture temporal dependencies:
+    * **Time-Based Features**: New columns are created for `dayofyear`, `month`, `year`, `quarter`, `dayofweek`, and `weekofyear`.
+    * **Lag Features**: The power consumption from previous days (e.g., 1 day ago, 1 week ago) is added as a feature. This tells the model what the consumption was in the immediate and recent past.
+
+### 4. Model Training
+* An **XGBoost Regressor** is trained on the data. XGBoost is a gradient-boosting framework known for its high performance and ability to capture complex, non-linear relationships.
+* A **realistic train-test split** is used: the model is trained on the first three years of data and then tested on the final year. This simulates a real-world scenario where a model is trained on past data to forecast the future.
+
+### 5. Evaluation
+* The trained model is evaluated on the unseen test set (the final year of data) using standard regression metrics:
+    * **R-squared (R²)**: Measures the proportion of the variance in the demand that is predictable from the features.
+    * **Root Mean Squared Error (RMSE)**: A measure of the average magnitude of the prediction errors.
+* The feature importance is also plotted, revealing that the 1-week lag and the day of the year are the most powerful predictors.
+
+---
+
+## Key Concepts Explained
+
+* **Time-Series Forecasting**: A machine learning task that involves predicting future values based on previously observed, time-ordered data points.
+* **XGBoost**: A high-performance, open-source gradient boosting framework that uses tree-based learning algorithms.
+* **Resampling**: The process of changing the frequency of time-series data (e.g., from minute-level to daily).
+* **Seasonal Decomposition**: A statistical technique that breaks down a time series into its constituent components: trend, seasonality, and residual.
+* **Lag Features**: A feature created by shifting a time-series backwards by a certain number of time steps.
+
+---
+
+## Results & Conclusion
+
+The trained XGBoost model demonstrated high accuracy in forecasting daily power consumption, achieving an **R-squared (R²) score of 0.837** on the unseen test data.
+
+This project successfully shows how a well-engineered set of time-series features, combined with a powerful gradient-boosting model, can create a reliable and accurate energy forecasting system. This provides a valuable tool for both consumers looking to manage their costs and utility providers aiming to optimize the power grid.
+	
+---
+---
+# Socio-Economic Factors for Income Prediction
+
+This project develops a high-performance machine learning model to accurately predict whether an individual's income exceeds $50,000 per year. Using the well-known "Adult" dataset from the UCI Machine Learning Repository, this analysis trains an **XGBoost classifier** to identify the key demographic and socio-economic factors that are most predictive of income level.
+
+The project emphasizes a robust machine learning workflow, including detailed exploratory data analysis (EDA) to visualize the relationships between features and income, a sophisticated preprocessing pipeline to handle mixed data types, and careful management of class imbalance.
+
+---
+
+## Strategic Value & Purpose
+
+Understanding the factors that correlate with income is a fundamental task in socio-economic research and has direct applications in various fields. The purpose of this project is to create a model that can:
+* **Identify Key Drivers of Income**: Pinpoint the most significant factors (like education, age, and work type) that influence an individual's earning potential.
+* **Inform Policy and Research**: Provide a data-driven foundation for public policy discussions related to education, workforce development, and economic inequality.
+* **Enable Targeted Services**: In a commercial context, this type of model can be used for targeted marketing of financial products or premium services to individuals in different income brackets.
+
+---
+
+## Methodology Workflow
+
+The project follows a complete data science pipeline for building a robust and interpretable classification system.
+
+### 1. Data Loading and Preparation
+* The "Adult" dataset is loaded from a CSV file. It contains over 32,000 records with 14 features, including `age`, `education`, `workclass`, `capital-gain`, and the target `income` bracket.
+* Initial data cleaning is performed, which includes renaming columns for clarity and handling missing values represented by '?'.
+
+### 2. Exploratory Data Analysis (EDA)
+* The distribution of the target variable (`income`) is analyzed, revealing a significant **class imbalance**: only about 24% of individuals in the dataset have an income above $50K.
+* **Visualizations** are created to explore the relationships between key features and income. The analysis clearly shows that individuals with higher education levels (e.g., Bachelors, Masters) and those who are older are significantly more likely to be in the high-income bracket. 
+
+### 3. Preprocessing Pipeline
+* The dataset is split into features (`X`) and the target variable (`y`).
+* The categorical target variable is converted into numerical labels (`<=50K` -> 0, `>50K` -> 1).
+* A sophisticated **`ColumnTransformer`** pipeline is built to handle the mixed-type data:
+    * **Numerical Features**: `StandardScaler` is applied to scale all numerical features to a consistent range.
+    * **Categorical Features**: `OneHotEncoder` is used to convert categorical columns (like `workclass` and `occupation`) into a numerical format the model can understand.
+
+### 4. Model Training
+* The data is split into training (80%) and testing (20%) sets.
+* An **XGBoost Classifier** is trained on the data. A key parameter, `scale_pos_weight`, is used to address the class imbalance. This tells the model to give more importance to the less frequent but often more interesting ">50K" class during training.
+
+### 5. Evaluation
+* The trained model is evaluated on the unseen test set using several standard metrics:
+    * **Accuracy Score**: The overall percentage of correct predictions.
+    * **Classification Report**: A detailed report showing the **precision, recall, and F1-score** for both income brackets.
+    * **Confusion Matrix**: A visual breakdown of the model's predictions, showing how well it distinguishes between the two classes. 
+
+---
+
+## Key Concepts Explained
+
+* **XGBoost**: A high-performance, open-source gradient boosting framework that uses tree-based learning algorithms. It is known for its speed and accuracy, making it a popular choice for structured data problems.
+* **Class Imbalance**: A common problem in classification where the different classes are not represented equally in the dataset.
+* **One-Hot Encoding**: A technique for converting categorical variables into a numerical format that can be provided to machine learning algorithms.
+
+---
+
+## Results & Conclusion
+
+The trained XGBoost model demonstrated strong predictive performance, achieving an overall **accuracy of 87%** on the test set. The model was effective at identifying individuals in the high-income bracket, confirming the patterns discovered during the exploratory data analysis.
+
+This project successfully shows how machine learning can be used to analyze complex socio-economic data and build a powerful predictive model. The insights gained can be valuable for researchers, policymakers, and businesses seeking to understand the factors that drive income levels.
+	
+---
+---
 
