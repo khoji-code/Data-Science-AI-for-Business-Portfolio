@@ -1148,4 +1148,68 @@ This project successfully demonstrates how standard machine learning techniques 
 	
 ---
 ---
+# Time-Series Forecasting for Bike Share Demand
+
+This project develops a high-performance machine learning model to forecast the hourly demand for a bike-sharing program. Using the UCI Bike Sharing dataset, it trains a **LightGBM Regressor** to predict the total number of bike rentals for a given hour.
+
+The project emphasizes a robust time-series workflow, including in-depth exploratory data analysis (EDA) to uncover temporal patterns, advanced feature engineering to capture time-based dependencies, and a realistic training/testing split that simulates a real-world forecasting scenario.
+
+---
+
+## Strategic Value & Purpose
+
+Accurate demand forecasting is critical for the operational efficiency and profitability of a bike-sharing service. This project provides the foundation for a system that can:
+* **Optimize Bike Rebalancing**: By predicting where and when demand will be high, the company can proactively move bikes to those locations, preventing stockouts and maximizing rentals.
+* **Inform Maintenance Schedules**: Maintenance can be scheduled during predicted low-demand periods to minimize service disruption.
+* **Guide Marketing & Promotions**: The model's insights can be used to design targeted promotions to boost ridership during historically slow times.
+* **Support Strategic Planning**: Long-term forecasts can help with decisions about expanding the number of bikes or stations.
+
+---
+
+## Methodology Workflow
+
+The project follows a complete data science pipeline for building a state-of-the-art time-series forecasting model.
+
+### 1. Data Loading and Preparation
+* The bike-sharing dataset is loaded, containing hourly rental counts along with weather and seasonal information.
+* **Exploratory Data Analysis (EDA)** is performed to understand the underlying patterns in the data. Key visualizations include:
+    * **Time-Series Decomposition**: To separate the overall trend, seasonal patterns, and residual noise in the rental data. 
+    * **Circadian Rhythm Heatmap**: A 24-hour heatmap that clearly shows the daily and weekly demand patterns (e.g., morning and evening commute peaks on weekdays). 
+
+### 2. Advanced Feature Engineering
+* This is a critical step for time-series forecasting. The raw data is enriched with new features designed to capture temporal dependencies:
+    * **Time-Based Features**: New columns are created for `hour`, `dayofweek`, `month`, etc.
+    * **Lag Features**: The rental count from previous hours (e.g., 1 hour ago, 2 hours ago) is added as a feature. This tells the model what the demand was in the immediate past.
+    * **Rolling Window Features**: Features like the rolling average of demand over the last 24 hours are created. This gives the model a sense of the recent trend.
+
+### 3. Model Training
+* A **LightGBM Regressor** is trained on the data. LightGBM is a gradient-boosting framework known for its high performance and ability to handle large datasets.
+* A **realistic train-test split** is used: the model is trained on data from 2011 and then tested on data from 2012. This simulates a real-world scenario where a model is trained on past data to forecast the future.
+
+### 4. Evaluation
+* The trained model is evaluated on the unseen test set (2012 data) using standard regression metrics:
+    * **R-squared (R²)**: Measures the proportion of the variance in the demand that is predictable from the features.
+    * **Mean Absolute Error (MAE)**: The average absolute difference between the predicted and actual rental counts.
+* The feature importance is also plotted, revealing that `hour` and the 1-hour lag are the most powerful predictors.
+
+---
+
+## Key Concepts Explained
+
+* **Time-Series Forecasting**: A machine learning task that involves predicting future values based on previously observed, time-ordered data points.
+* **LightGBM**: A high-performance, open-source gradient boosting framework that uses tree-based learning algorithms.
+* **Feature Engineering**: The process of using domain knowledge to create new features from existing data to improve machine learning model performance.
+* **Lag Features**: A feature created by shifting a time-series backwards by a certain number of time steps.
+* **Rolling Window**: A calculation (like an average) performed over a sliding window of a fixed size along a time series.
+
+---
+
+## Results & Conclusion
+
+The trained LightGBM model demonstrated strong predictive power, achieving an **R-squared (R²) score of 0.751** and a **Mean Absolute Error (MAE) of approximately 45 bikes** on the unseen 2012 data.
+
+This project successfully shows how a well-engineered set of time-series features, combined with a powerful gradient-boosting model, can create an accurate and reliable demand forecasting system. This provides a valuable tool for bike-sharing companies to optimize their operations and make data-driven strategic decisions.
+	
+---
+---
 
