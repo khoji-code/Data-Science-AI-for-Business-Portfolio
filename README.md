@@ -101,7 +101,7 @@ The projects are tiered, from the most technically advanced and research-aligned
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LightGBM](https://img.shields.io/badge/LightGBM-B90948)
 
 20. **[Time-Series Forecasting of Household Power Consumption](Projects/Time_Series_Forecasting_of_Household_Power_Consumption.ipynb)**
-    * Predicted daily household electricity consumption with a high R-squared of 0.957.
+    * Predicted daily household electricity consumption with a high R-squared of 0.837.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699)
 
 21. **[Socio-Economic Factors for Income Prediction](Projects/Socio_Economic_Factors_for_Income_Prediction.ipynb)**
