@@ -1017,5 +1017,135 @@ The project follows a complete data science pipeline for building a state-of-the
 ## Results
 
 The trained LSTM model, enhanced with GloVe embeddings, demonstrated strong performance on this large-scale sentiment analysis task, achieving an **accuracy of approximately 80%** on the test set. This project successfully shows how deep learning can be used to build a powerful and accurate system for understanding public sentiment from social media data.
+
+---
+---
+# Predicting Students' Dropout and Academic Success
+
+This project develops a machine learning model to predict the academic outcomes of higher education students, classifying them as likely to **Dropout**, remain **Enrolled**, or **Graduate**. Using a comprehensive dataset that includes demographic, socio-economic, and academic performance data, this analysis identifies the key factors that influence student success.
+
+The core of the project is a high-performance **CatBoost classifier**, and its predictions are made transparent and interpretable using **SHAP (SHapley Additive exPlanations)**, revealing the "why" behind the model's forecasts.
+
+---
+
+## Strategic Value & Purpose
+
+Student dropout is a significant challenge for educational institutions worldwide. This predictive model serves as a powerful tool for:
+* **Proactive Intervention**: By identifying students at high risk of dropping out early, institutions can offer timely and targeted support, such as academic counseling, financial aid, or mentorship.
+* **Improving Retention Rates**: A small improvement in student retention can have a major positive impact on an institution's reputation and financial stability.
+* **Resource Optimization**: The model's insights allow universities to allocate support resources more efficiently to the students who need them most.
+* **Policy Enhancement**: Understanding the key drivers of dropout can inform institutional policies related to scholarships, curriculum design, and student services.
+
+---
+
+## Methodology Workflow
+
+The project follows a complete data science pipeline for building a robust and interpretable classification system.
+
+### 1. Data Loading and Preparation
+* The "Predict students' dropout and academic success" dataset from the UCI Machine Learning Repository is loaded.
+* The dataset is explored to understand its structure, containing over 4,400 student records and 36 different features.
+
+### 2. Exploratory Data Analysis (EDA)
+* The distribution of the target variable (`Target`) is analyzed, showing a balanced representation of the three outcome classes (Dropout, Enrolled, Graduate).
+* **Interactive visualizations** are created using `plotly` to explore the relationships between various features and student outcomes. For example, analysis shows a strong correlation between a student's scholarship status and their likelihood of graduating. 
+
+### 3. Preprocessing
+* The categorical target variable is converted into numerical labels using a `LabelEncoder` (`Dropout=0`, `Enrolled=1`, `Graduate=2`).
+* The data is split into features (`X`) and the target variable (`y`).
+
+### 4. Model Training
+* The data is split into training (80%) and testing (20%) sets.
+* A **CatBoost Classifier** is trained on the data. CatBoost is a gradient-boosting framework that is particularly effective at handling datasets with a mix of numerical and categorical features. The `class_weights` parameter is used to ensure the model performs well on all three outcome classes.
+
+### 5. Evaluation
+* The trained model is evaluated on the unseen test set using several standard metrics:
+    * **Accuracy Score**: The overall percentage of correct predictions.
+    * **Classification Report**: A detailed report showing the **precision, recall, and F1-score** for each of the three outcome classes.
+    * **Confusion Matrix**: A visual breakdown of the model's predictions.
+
+### 6. Explainable AI (XAI) with SHAP
+* To understand *why* the model makes certain predictions, **SHAP** is used.
+* A SHAP summary plot is generated, which ranks the features by their overall impact on the model's predictions. The analysis clearly identifies that **academic performance** (specifically `Curricular units 2nd sem (grade)` and `(approved)`) is by far the most important predictor of a student's academic outcome. 
+
+---
+
+## Key Concepts Explained
+
+* **Multi-Class Classification**: A classification task where each instance can be categorized into one of more than two classes.
+* **CatBoost**: A high-performance, open-source gradient boosting on decision trees library. It's particularly well-suited for datasets with a high number of categorical features.
+* **SHAP (SHapley Additive exPlanations)**: A game theory-based approach for explaining the output of any machine learning model, providing insights into feature importance and impact.
+
+---
+
+## Results & Conclusion
+
+The trained CatBoost model achieved a high **accuracy of 82.3%** on the test set, demonstrating its strong ability to predict student outcomes. The SHAP analysis provided a clear and actionable insight: a student's academic performance in their first year is the single most critical determinant of their future success.
+
+This project successfully demonstrates that a well-tuned machine learning model, combined with an explainability framework, can serve as a highly effective tool for educational institutions to proactively support their students and improve academic success rates.
 	
+---
+---
+# Human Activity Recognition (HAR) with Smartphone Data
+
+This project builds a high-performance machine learning model to classify human activities—such as **Walking, Sitting, Standing, and Laying**—using sensor data collected from smartphones. The analysis is performed on the well-known UCI HAR dataset, which contains processed time-series data from accelerometer and gyroscope sensors.
+
+The project emphasizes a robust data science workflow, including advanced exploratory data analysis with **t-SNE** for high-dimensional visualization, feature scaling, and a comparative evaluation of two powerful classification models: **Logistic Regression** and **XGBoost**.
+
+---
+
+## Strategic Value & Purpose
+
+Human Activity Recognition is a foundational technology for a wide range of applications, especially in health, fitness, and smart environments. The purpose of this project is to create a system that can:
+* **Enable Health and Fitness Tracking**: The model can be integrated into wearable devices or smartphone apps to automatically track a user's daily physical activities.
+* **Support Elder Care**: HAR systems can be used to monitor the activity levels of elderly individuals, detecting falls or periods of inactivity that may require attention.
+* **Power Smart Homes**: A smart home could use activity recognition to adjust lighting, temperature, or entertainment systems based on what the occupant is doing (e.g., dimming the lights when the user is "Laying down").
+
+---
+
+## Methodology Workflow
+
+The project follows a complete pipeline for building and evaluating a robust classification model.
+
+### 1. Data Loading and Preparation
+* The UCI HAR dataset is loaded. This dataset is conveniently pre-split into training and testing sets and contains 561 pre-processed features derived from the raw sensor signals.
+* The activity labels are mapped from numerical codes to human-readable names (e.g., 1 -> "WALKING").
+
+### 2. Exploratory Data Analysis (EDA)
+* The distribution of the different activity classes is visualized, confirming that the dataset is well-balanced.
+* **t-SNE (t-Distributed Stochastic Neighbor Embedding)** is used for dimensionality reduction. This powerful technique visualizes the high-dimensional (561 features) sensor data on a 2D scatter plot. The resulting plot clearly shows that the different activities form distinct clusters, indicating that a machine learning model will be able to separate them effectively. 
+
+### 3. Preprocessing
+* **Feature Scaling**: The sensor data features are normalized using a `StandardScaler`. This is a crucial step for many machine learning algorithms (especially distance-based ones and those using regularization, like Logistic Regression) as it ensures all features are on a similar scale.
+
+### 4. Model Training
+Two different classification models are trained on the data for comparison:
+1. **Logistic Regression**: A simple, interpretable, and efficient linear model that serves as a strong baseline.
+2. **XGBoost Classifier**: A high-performance, tree-based gradient boosting model known for its accuracy and speed.
+
+### 5. Evaluation
+* The trained models are evaluated on the unseen test set using several standard metrics:
+    * **Accuracy Score**: The overall percentage of correct activity predictions.
+    * **Classification Report**: A detailed report showing the **precision, recall, and F1-score** for each individual activity.
+    * **Confusion Matrix**: A visual breakdown of the model's predictions, showing which activities it is confusing with each other. The matrix reveals that the model is excellent at distinguishing between static (Sitting, Standing, Laying) and dynamic (Walking, etc.) activities. 
+
+---
+
+## Key Concepts Explained
+
+* **Human Activity Recognition (HAR)**: A field of computer science and signal processing focused on automatically identifying the physical activity performed by a person based on sensor data.
+* **Accelerometer & Gyroscope**: The key sensors in a smartphone used for HAR. The accelerometer measures linear acceleration, while the gyroscope measures rotational velocity.
+* **t-SNE**: An advanced visualization algorithm for exploring high-dimensional data. It creates a 2D or 3D "map" where similar data points are modeled as being close together.
+* **XGBoost**: A high-performance, open-source gradient boosting framework that uses tree-based learning algorithms.
+
+---
+
+## Results & Conclusion
+
+Both models performed exceptionally well, but the **XGBoost classifier achieved a superior accuracy of 92.57%** on the test set. The detailed evaluation confirms that the model is highly effective at recognizing a wide range of human activities from smartphone sensor data.
+
+This project successfully demonstrates how standard machine learning techniques can be used to build a powerful and accurate HAR system, providing a solid foundation for real-world applications in health, fitness, and smart technology.
+	
+---
+---
 
