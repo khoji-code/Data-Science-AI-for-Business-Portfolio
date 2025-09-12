@@ -49,7 +49,7 @@ The projects are tiered, from the most technically advanced and research-aligned
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white) ![GNN](https://img.shields.io/badge/Graph_Neural_Network-blueviolet)
 
 8. **[Predictive Maintenance for NASA Turbofan Engines](Projects/Predictive_Maintenance_for_NASA_Turbofan_Engines_using_Bi_LSTM.ipynb)**
-    * Built a Bi-LSTM deep learning model to predict the Remaining Useful Life (RUL) of aircraft engines (R² of 0.84).
+    * Built a Bi-LSTM deep learning model to predict the Remaining Useful Life (RUL) of aircraft engines (R² of 0.87).
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white) ![Keras](https://img.shields.io/badge/Keras-D00000?logo=keras&logoColor=white) ![LSTM](https://img.shields.io/badge/LSTM-blue)
 
 9. **[Discovering Product Ecosystems with Network Analysis](Projects/Product_Ecosystems_with_Network_Analysis.ipynb)**
