@@ -18,7 +18,7 @@ The projects are tiered, from the most technically advanced and research-aligned
 
 1. **[Deep Reinforcement Learning for Strategic Budget Allocation](Projects/Deep_Reinforcement_Learning_for_Strategic_Budget_Allocation.ipynb)**
     * Trained a DQN agent to learn an optimal, dynamic budget strategy that outperformed static rules.
-    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white) ![Reinforcement Learning](https://img.shields.io/badge/Reinforcement_Learning-blueviolet) ![OpenAI Gym](https://img.shields.io/badge/OpenAI_Gym-0081A5?logo=openai&logoColor=white)
+    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white) ![Reinforcement Learning](https://img.shields.io/badge/Reinforcement_Learning-blueviolet) ![OpenAI Gym](https://img.shields.io/badge/OpenAI_Gym-0081A5?logo=openai&logoColor=white)
 
 2. **[CRM Digital Twin & Interactive Business Intelligence Dashboard](Projects/CRM_Digital_Twin_and_Interactive_Business_Intelligence_Dashboard.ipynb)**
     * Created a synthetic CRM "digital twin" and built an interactive dashboard for sales performance monitoring.
