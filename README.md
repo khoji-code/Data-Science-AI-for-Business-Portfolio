@@ -22,7 +22,7 @@ The projects are tiered, from the most technically advanced and research-aligned
 
 2. **[CRM Digital Twin & Interactive Business Intelligence Dashboard](Projects/CRM_Digital_Twin_and_Interactive_Business_Intelligence_Dashboard.ipynb)**
     * Created a synthetic CRM "digital twin" and built an interactive dashboard for sales performance monitoring.
-    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Plotly](https://img.shields.io/badge/Plotly-3F4F75?logo=plotly&logoColor=white) ![BI](https://img.shields.io/badge/Business_Intelligence-0078D4)
+    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LifeTimes](https://img.shields.io/badge/Plotly-3F4F75?logo=plotly&logoColor=white) ![BI](https://img.shields.io/badge/Business_Intelligence-0078D4)
 
 3. **[Reinforcement Learning for Dynamic Pricing](Projects/Reinforcement_Learning_for_Dynamic_Pricing.ipynb)**
     * Developed a DQN agent to learn a revenue-maximizing dynamic pricing policy in a simulated market.
