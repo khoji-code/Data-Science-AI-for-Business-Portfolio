@@ -26,7 +26,7 @@ The projects are tiered, from the most technically advanced and research-aligned
 
 3. **[Reinforcement Learning for Dynamic Pricing](Projects/Reinforcement_Learning_for_Dynamic_Pricing.ipynb)**
     * Developed a DQN agent to learn a revenue-maximizing dynamic pricing policy in a simulated market.
-    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white) ![Reinforcement Learning](https://img.shields.io/badge/Reinforcement_Learning-blueviolet)
+    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white) ![Reinforcement Learning](https://img.shields.io/badge/Reinforcement_Learning-blueviolet) ![OpenAI Gym](https://img.shields.io/badge/OpenAI_Gym-0081A5?logo=openai&logoColor=white)
 
 4. **[Causal Inference for Marketing Campaign Optimization](Projects/Causal_Inference_Kevin_Hillstrom_Email_Analytics.ipynb)**
     * Used a Causal Forest to measure campaign uplift and generate personalized recommendations for 64k customers.
