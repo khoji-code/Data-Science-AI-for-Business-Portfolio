@@ -35,7 +35,7 @@ The projects are tiered, from the most technically advanced and research-aligned
 ### Tier 2: Responsible AI, MLOps & Advanced Model Interpretation
 
 5. **[Credit Card Default Prediction with XAI and Fairness Audit](Projects/Credit_Card_Default_Prediction_with_XAI_and_Fairness_Audit.ipynb)**
-    * Audited a default prediction model (AUC 0.778) for bias, reducing the fairness gap by 57%.
+    * Audited Transparent model for credit card Default prediction and reduces its Algorithmic bias with FairLearn.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![SHAP](https://img.shields.io/badge/SHAP-E81123) ![Fairlearn](https://img.shields.io/badge/Fairlearn-0078D4) ![Responsible AI](https://img.shields.io/badge/Responsible_AI-darkgreen)
 
 6. **[Multi-Label Product Classification and Topic Modeling](Projects/Multi_Label_Product_Classification_and_Topic_Modeling.ipynb)**
