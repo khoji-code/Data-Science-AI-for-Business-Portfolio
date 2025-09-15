@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Portfolio-Data_Science_&_AI-5A2A9A?style=for-the-badge&logo=python" alt="Portfolio Badge"/>
   <h1>📊 Data Science & AI for Business Portfolio 📈</h1>
   <p>
-    A curated collection of 24 projects demonstrating the application of cutting-edge AI and data science to solve complex, real-world business challenges.
+    A curated collection of 22 projects demonstrating the application of cutting-edge AI and data science to solve complex, real-world business challenges.
   </p>
 </div>
 
