@@ -44,75 +44,71 @@ The projects are tiered, from the most technically advanced and research-aligned
 
 ### Tier 3: Advanced Analytics for Operations & Supply Chain
 
-7. **[Supply Chain Forecasting with Graph Neural Networks](Projects/Supply_Chain_Forecasting_with_Graph_Neural_Networks.ipynb)**
-    * Developed a GNN-LSTM model that outperformed traditional LSTMs by leveraging the supply chain's graph structure.
-    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white) ![GNN](https://img.shields.io/badge/Graph_Neural_Network-blueviolet)
-
-8. **[Predictive Maintenance for NASA Turbofan Engines](Projects/Predictive_Maintenance_for_NASA_Turbofan_Engines_using_Bi_LSTM.ipynb)**
+7. **[Predictive Maintenance for NASA Turbofan Engines](Projects/Predictive_Maintenance_for_NASA_Turbofan_Engines_using_Bi_LSTM.ipynb)**
     * Built a Bi-LSTM deep learning model to predict the Remaining Useful Life (RUL) of aircraft engines (R² of 0.87).
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white) ![Keras](https://img.shields.io/badge/Keras-D00000?logo=keras&logoColor=white) ![LSTM](https://img.shields.io/badge/LSTM-blue)
 
-9. **[Discovering Product Ecosystems with Network Analysis](Projects/Product_Ecosystems_with_Network_Analysis.ipynb)**
+8. **[Discovering Product Ecosystems with Network Analysis](Projects/Product_Ecosystems_with_Network_Analysis.ipynb)**
     * Modeled an e-commerce catalog as a network to uncover hidden clusters of co-purchased products.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![NetworkX](https://img.shields.io/badge/NetworkX-2A78B0) ![Graph Analysis](https://img.shields.io/badge/Graph_Analysis-blueviolet)
 
-10. **[Real-Time IoT Intrusion Detection](Projects/Real_Time_IoT_Intrusion_Detection.ipynb)**
+9. **[Real-Time IoT Intrusion Detection](Projects/Real_Time_IoT_Intrusion_Detection.ipynb)**
     * Classified cyberattacks in IoT network traffic with 98% F1-score while handling severe class imbalance.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931A?logo=scikit-learn&logoColor=white) ![LightGBM](https://img.shields.io/badge/LightGBM-B90948) ![Cybersecurity](https://img.shields.io/badge/Cybersecurity-darkred)
 
-11. **[Fraud Detection with a TensorFlow LSTM Autoencoder](Projects/Fraud_Detection_with_a_TensorFlow_LSTM_Autoencoder.ipynb)**
+10. **[Fraud Detection with a TensorFlow LSTM Autoencoder](Projects/Fraud_Detection_with_a_TensorFlow_LSTM_Autoencoder.ipynb)**
     * Used an unsupervised LSTM Autoencoder to detect fraudulent transactions by identifying anomalies.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white) ![Keras](https://img.shields.io/badge/Keras-D00000?logo=keras&logoColor=white) ![Unsupervised Learning](https://img.shields.io/badge/Unsupervised-darkorange)
 
 ### Tier 4: Core Business Intelligence & Customer Analytics
 
-12. **[Predicting Customer's Next Action in an Online Clickstream](Projects/Predicting_Customers_Next_Action_in_an_Online_Shopping_Clickstream.ipynb)**
+11. **[Predicting Customer's Next Action in an Online Clickstream](Projects/Predicting_Customers_Next_Action_in_an_Online_Shopping_Clickstream.ipynb)**
     * Predicted the next product category a user will visit with 98.08% accuracy.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699) ![E-commerce](https://img.shields.io/badge/E--commerce-brightgreen)
 
-13. **[Geospatial Hotspot Analysis for Retail Strategy](Projects/Geospatial_Hotspot_Analysis_for_Retail_Strategy_.ipynb)**
+12. **[Geospatial Hotspot Analysis for Retail Strategy](Projects/Geospatial_Hotspot_Analysis_for_Retail_Strategy_.ipynb)**
     * Transformed a list of 25,000+ store locations into a strategic map of market concentration using DBSCAN.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Folium](https://img.shields.io/badge/Folium-34A853) ![Geospatial](https://img.shields.io/badge/Geospatial-blueviolet)
 
-14. **[AI-Powered Customer Segmentation](Projects/AI_Powered_Customer_Segmentation_with_K_Means_and_PCA.ipynb)**
+13. **[AI-Powered Customer Segmentation](Projects/AI_Powered_Customer_Segmentation_with_K_Means_and_PCA.ipynb)**
     * Applied K-Means clustering to discover 5 distinct customer segments from purchasing data.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931A?logo=scikit-learn&logoColor=white) ![Unsupervised Learning](https://img.shields.io/badge/Unsupervised-darkorange)
 
-15. **[E-commerce Conversion Prediction](Projects/E_commerce_Conversion_Prediction_with_Machine_Learning.ipynb)**
+14. **[E-commerce Conversion Prediction](Projects/E_commerce_Conversion_Prediction_with_Machine_Learning.ipynb)**
     * Predicted online shopping conversion with a ROC AUC score of 0.917.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LightGBM](https://img.shields.io/badge/LightGBM-B90948) ![E-commerce](https://img.shields.io/badge/E--commerce-brightgreen)
 
-16. **[Large-Scale Social Media Sentiment Analysis](Projects/Large_Scale_Social_Media_Sentiment_Analysis.ipynb)**
+15. **[Large-Scale Social Media Sentiment Analysis](Projects/Large_Scale_Social_Media_Sentiment_Analysis.ipynb)**
     * Built a scalable pipeline to classify the sentiment of social media posts for real-time brand monitoring.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![TextBlob](https://img.shields.io/badge/TextBlob-888888) ![NLP](https://img.shields.io/badge/NLP-blue)
 
 ### Tier 5: Foundational Machine Learning Models
 
-17. **[Predict Students' Dropout and Academic Success](Projects/Predict_Students'_Dropout_and_Academic_Success.ipynb)**
+16. **[Predict Students' Dropout and Academic Success](Projects/Predict_Students'_Dropout_and_Academic_Success.ipynb)**
     * Predicted student outcomes to enable proactive institutional support.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![CatBoost](https://img.shields.io/badge/CatBoost-009966)
 
-18. **[Human Activity Recognition (HAR) with Smartphone Data](Projects/Human_Activity_Recognition_(HAR)_with_Smartphone_Data.ipynb)**
+17. **[Human Activity Recognition (HAR) with Smartphone Data](Projects/Human_Activity_Recognition_(HAR)_with_Smartphone_Data.ipynb)**
     * Classified human activities from sensor data with 92.57% accuracy.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699)
 
-19. **[Time-Series Forecasting for Bike Share Demand](Projects/Time_Series_Forecasting_for_Bike_Share_Demand.ipynb)**
+18. **[Time-Series Forecasting for Bike Share Demand](Projects/Time_Series_Forecasting_for_Bike_Share_Demand.ipynb)**
     * Forecasted hourly bike rental demand with an R-squared of 0.751.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LightGBM](https://img.shields.io/badge/LightGBM-B90948)
 
-20. **[Time-Series Forecasting of Household Power Consumption](Projects/Time_Series_Forecasting_of_Household_Power_Consumption.ipynb)**
+19. **[Time-Series Forecasting of Household Power Consumption](Projects/Time_Series_Forecasting_of_Household_Power_Consumption.ipynb)**
     * Predicted daily household electricity consumption with a high R-squared of 0.837.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699)
 
-21. **[Socio-Economic Factors for Income Prediction](Projects/Socio_Economic_Factors_for_Income_Prediction.ipynb)**
+20. **[Socio-Economic Factors for Income Prediction](Projects/Socio_Economic_Factors_for_Income_Prediction.ipynb)**
     * Predicted income level from census data with 87% accuracy.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699)
 
-22. **[Wine Quality Prediction](Projects/Wine_Quality_UCI.ipynb)**
+21. **[Wine Quality Prediction](Projects/Wine_Quality_UCI.ipynb)**
     * Used physicochemical properties to predict the quality score of wine and explain the results with LIME.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LIME](https://img.shields.io/badge/LIME-FFC107)
 
-23. **[Air Quality Prediction](Projects/Air_Quality.ipynb)**
+22. **[Air Quality Prediction](Projects/Air_Quality.ipynb)**
     * Built a high-accuracy XGBoost model to forecast Benzene air pollution levels.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699)
 	
