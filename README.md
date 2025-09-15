@@ -84,9 +84,9 @@ The projects are tiered, from the most technically advanced and research-aligned
 
 ### Tier 5: Foundational Machine Learning Models
 
-16. **[Predict Students' Dropout and Academic Success](Projects/Predict_Students'_Dropout_and_Academic_Success.ipynb)**
-    * Predicted student outcomes to enable proactive institutional support.
-    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![CatBoost](https://img.shields.io/badge/CatBoost-009966)
+16. **[Wine Quality Prediction](Projects/Wine_Quality_UCI.ipynb)**
+    * Used physicochemical properties to predict the quality score of wine and explain the results with LIME and SHAP.
+    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LIME](https://img.shields.io/badge/LIME-FFC107) ![SHAP](https://img.shields.io/badge/SHAP-E81123)
 
 17. **[Human Activity Recognition (HAR) with Smartphone Data](Projects/Human_Activity_Recognition_(HAR)_with_Smartphone_Data.ipynb)**
     * Classified human activities from sensor data with 92.57% accuracy.
@@ -104,9 +104,9 @@ The projects are tiered, from the most technically advanced and research-aligned
     * Predicted income level from census data with 87% accuracy.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699)
 
-21. **[Wine Quality Prediction](Projects/Wine_Quality_UCI.ipynb)**
-    * Used physicochemical properties to predict the quality score of wine and explain the results with LIME and SHAP.
-    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LIME](https://img.shields.io/badge/LIME-FFC107) ![SHAP](https://img.shields.io/badge/SHAP-E81123)
+21. **[Predict Students' Dropout and Academic Success](Projects/Predict_Students'_Dropout_and_Academic_Success.ipynb)**
+    * Predicted student outcomes to enable proactive institutional support.
+    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![CatBoost](https://img.shields.io/badge/CatBoost-009966)
 
 22. **[Air Quality Prediction](Projects/Air_Quality.ipynb)**
     * Built a high-accuracy XGBoost model to forecast Benzene air pollution levels.
