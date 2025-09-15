@@ -953,69 +953,78 @@ The trained LSTM model, enhanced with GloVe embeddings, demonstrated strong perf
 
 ---
 ---
-# Predicting Students' Dropout and Academic Success
+# Wine Quality Prediction with Explainable AI (XAI)
 
-This project develops a machine learning model to predict the academic outcomes of higher education students, classifying them as likely to **Dropout**, remain **Enrolled**, or **Graduate**. Using a comprehensive dataset that includes demographic, socio-economic, and academic performance data, this analysis identifies the key factors that influence student success.
+This project develops and compares several machine learning models to predict the quality of white wine based on its chemical properties. Using the well-known UCI Wine Quality dataset, the analysis goes beyond simple prediction by employing **Explainable AI (XAI)** techniques—specifically **LIME** and **SHAP**—to understand *why* the best-performing model makes its predictions.
 
-The core of the project is a high-performance **CatBoost classifier**, and its predictions are made transparent and interpretable using **SHAP (SHapley Additive exPlanations)**, revealing the "why" behind the model's forecasts.
+The project emphasizes a robust data science workflow, including handling class imbalance with SMOTE, comparing different classifiers, and making the final model's logic transparent and interpretable.
 
 ---
 
 ## Strategic Value & Purpose
 
-Student dropout is a significant challenge for educational institutions worldwide. This predictive model serves as a powerful tool for:
-* **Proactive Intervention**: By identifying students at high risk of dropping out early, institutions can offer timely and targeted support, such as academic counseling, financial aid, or mentorship.
-* **Improving Retention Rates**: A small improvement in student retention can have a major positive impact on an institution's reputation and financial stability.
-* **Resource Optimization**: The model's insights allow universities to allocate support resources more efficiently to the students who need them most.
-* **Policy Enhancement**: Understanding the key drivers of dropout can inform institutional policies related to scholarships, curriculum design, and student services.
+For winemakers, objectively assessing quality and understanding its chemical drivers is crucial for quality control, product development, and marketing. This project provides the foundation for a system that can:
+* **Automate Quality Assessment**: Predict a wine's quality score based on lab measurements, providing a fast and objective baseline.
+* **Identify Key Quality Drivers**: The XAI component reveals which chemical properties (e.g., alcohol content, acidity) have the most significant impact on wine quality.
+* **Optimize Production Processes**: With a clear understanding of the key drivers, winemakers can focus on adjusting their processes to consistently produce higher-quality wine.
+* **Build Trust in the Model**: By making the model's decisions explainable, stakeholders who are not data scientists can understand and trust its predictions.
 
 ---
 
 ## Methodology Workflow
 
-The project follows a complete data science pipeline for building a robust and interpretable classification system.
+The project follows a complete pipeline for building and interpreting a robust classification model.
 
 ### 1. Data Loading and Preparation
-* The "Predict students' dropout and academic success" dataset from the UCI Machine Learning Repository is loaded.
-* The dataset is explored to understand its structure, containing over 4,400 student records and 36 different features.
+* The UCI Wine Quality dataset is loaded. It contains 11 physicochemical features (e.g., `fixed acidity`, `volatile acidity`, `alcohol`) and a `quality` score (from 3 to 9).
+* The target variable is simplified into three categories: "bad," "normal," and "good."
 
 ### 2. Exploratory Data Analysis (EDA)
-* The distribution of the target variable (`Target`) is analyzed, showing a balanced representation of the three outcome classes (Dropout, Enrolled, Graduate).
-* **Interactive visualizations** are created using `plotly` to explore the relationships between various features and student outcomes. For example, analysis shows a strong correlation between a student's scholarship status and their likelihood of graduating. 
+* The distribution of the target variable (`quality`) is analyzed, revealing a significant **class imbalance**: the vast majority of wines are classified as "normal," with very few "bad" or "good" examples. This insight is critical for the next step.
+* A correlation heatmap is generated to visualize the relationships between the different chemical properties.
 
-### 3. Preprocessing
-* The categorical target variable is converted into numerical labels using a `LabelEncoder` (`Dropout=0`, `Enrolled=1`, `Graduate=2`).
-* The data is split into features (`X`) and the target variable (`y`).
+### 3. Handling Class Imbalance (SMOTE)
+* To address the class imbalance, **SMOTE (Synthetic Minority Over-sampling Technique)** is used.
+* SMOTE works by creating new, synthetic data points for the minority classes ("bad" and "good"). This provides the model with more examples to learn from, preventing it from becoming biased towards the majority "normal" class and leading to a more robust and accurate model.
 
-### 4. Model Training
-* The data is split into training (80%) and testing (20%) sets.
-* A **CatBoost Classifier** is trained on the data. CatBoost is a gradient-boosting framework that is particularly effective at handling datasets with a mix of numerical and categorical features. The `class_weights` parameter is used to ensure the model performs well on all three outcome classes.
+### 4. Model Training & Comparison
+* Three different classification models are trained on the balanced dataset:
+    1. **Logistic Regression**: A simple and interpretable linear model.
+    2. **Support Vector Machine (SVM)**: A powerful model that finds the optimal hyperplane to separate the classes.
+    3. **Random Forest Classifier**: An ensemble model that combines many decision trees to make a more accurate and stable prediction.
 
 ### 5. Evaluation
-* The trained model is evaluated on the unseen test set using several standard metrics:
-    * **Accuracy Score**: The overall percentage of correct predictions.
-    * **Classification Report**: A detailed report showing the **precision, recall, and F1-score** for each of the three outcome classes.
-    * **Confusion Matrix**: A visual breakdown of the model's predictions.
+* The trained models are evaluated on the unseen test set using the **accuracy score**.
+* The **Random Forest** model emerged as the top performer, achieving the highest accuracy in predicting wine quality.
 
-### 6. Explainable AI (XAI) with SHAP
-* To understand *why* the model makes certain predictions, **SHAP** is used.
-* A SHAP summary plot is generated, which ranks the features by their overall impact on the model's predictions. The analysis clearly identifies that **academic performance** (specifically `Curricular units 2nd sem (grade)` and `(approved)`) is by far the most important predictor of a student's academic outcome. 
+### 6. Explainable AI (XAI) with LIME and SHAP
+This is the final and most insightful step, focusing on explaining the predictions of the best model (Random Forest).
+
+* **LIME (Local Interpretable Model-agnostic Explanations)**: LIME is used to explain **individual predictions**. It answers the question, "Why was *this specific wine* predicted as 'good'?" The output shows which feature values for that single wine had the biggest positive or negative influence on the prediction. 
+
+* **SHAP (SHapley Additive exPlanations)**: SHAP is used to explain the model's behavior **globally**. The SHAP summary plot aggregates the feature contributions across all predictions, revealing which features are, on average, the most important. The analysis clearly identified `alcohol`, `volatile acidity`, and `free sulfur dioxide` as the top three drivers of wine quality. 
 
 ---
 
 ## Key Concepts Explained
 
-* **Multi-Class Classification**: A classification task where each instance can be categorized into one of more than two classes.
-* **CatBoost**: A high-performance, open-source gradient boosting on decision trees library. It's particularly well-suited for datasets with a high number of categorical features.
-* **SHAP (SHapley Additive exPlanations)**: A game theory-based approach for explaining the output of any machine learning model, providing insights into feature importance and impact.
+* **SMOTE**: An over-sampling technique used to handle class imbalance. It creates synthetic samples for the minority class.
+* **Random Forest**: An ensemble learning method that operates by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes of the individual trees.
+* **LIME**: A technique that explains the predictions of any classifier by learning an interpretable model locally around the prediction.
+* **SHAP**: A game theory-based approach for explaining the output of any machine learning model by calculating the contribution of each feature to a prediction.
 
 ---
 
 ## Results & Conclusion
 
-The trained CatBoost model achieved a high **accuracy of 82.3%** on the test set, demonstrating its strong ability to predict student outcomes. The SHAP analysis provided a clear and actionable insight: a student's academic performance in their first year is the single most critical determinant of their future success.
+The **Random Forest** model, trained on the SMOTE-balanced data, was the most accurate predictor of wine quality. More importantly, the **XAI analysis provided clear, actionable insights**:
 
-This project successfully demonstrates that a well-tuned machine learning model, combined with an explainability framework, can serve as a highly effective tool for educational institutions to proactively support their students and improve academic success rates.
+* **Globally**, `alcohol` content is the most significant factor in determining wine quality.
+* **Locally**, LIME was able to provide specific, feature-based justifications for individual predictions.
+
+This project successfully demonstrates how to build not just an accurate predictive model, but an **interpretable one**. This transparency is crucial for gaining stakeholder trust and translating a model's predictions into real-world business strategy.
+	
+
 	
 ---
 ---
@@ -1277,77 +1286,70 @@ This project successfully shows how machine learning can be used to analyze comp
 	
 ---
 ---
-# Wine Quality Prediction with Explainable AI (XAI)
+# Predicting Students' Dropout and Academic Success
 
-This project develops and compares several machine learning models to predict the quality of white wine based on its chemical properties. Using the well-known UCI Wine Quality dataset, the analysis goes beyond simple prediction by employing **Explainable AI (XAI)** techniques—specifically **LIME** and **SHAP**—to understand *why* the best-performing model makes its predictions.
+This project develops a machine learning model to predict the academic outcomes of higher education students, classifying them as likely to **Dropout**, remain **Enrolled**, or **Graduate**. Using a comprehensive dataset that includes demographic, socio-economic, and academic performance data, this analysis identifies the key factors that influence student success.
 
-The project emphasizes a robust data science workflow, including handling class imbalance with SMOTE, comparing different classifiers, and making the final model's logic transparent and interpretable.
+The core of the project is a high-performance **CatBoost classifier**, and its predictions are made transparent and interpretable using **SHAP (SHapley Additive exPlanations)**, revealing the "why" behind the model's forecasts.
 
 ---
 
 ## Strategic Value & Purpose
 
-For winemakers, objectively assessing quality and understanding its chemical drivers is crucial for quality control, product development, and marketing. This project provides the foundation for a system that can:
-* **Automate Quality Assessment**: Predict a wine's quality score based on lab measurements, providing a fast and objective baseline.
-* **Identify Key Quality Drivers**: The XAI component reveals which chemical properties (e.g., alcohol content, acidity) have the most significant impact on wine quality.
-* **Optimize Production Processes**: With a clear understanding of the key drivers, winemakers can focus on adjusting their processes to consistently produce higher-quality wine.
-* **Build Trust in the Model**: By making the model's decisions explainable, stakeholders who are not data scientists can understand and trust its predictions.
+Student dropout is a significant challenge for educational institutions worldwide. This predictive model serves as a powerful tool for:
+* **Proactive Intervention**: By identifying students at high risk of dropping out early, institutions can offer timely and targeted support, such as academic counseling, financial aid, or mentorship.
+* **Improving Retention Rates**: A small improvement in student retention can have a major positive impact on an institution's reputation and financial stability.
+* **Resource Optimization**: The model's insights allow universities to allocate support resources more efficiently to the students who need them most.
+* **Policy Enhancement**: Understanding the key drivers of dropout can inform institutional policies related to scholarships, curriculum design, and student services.
 
 ---
 
 ## Methodology Workflow
 
-The project follows a complete pipeline for building and interpreting a robust classification model.
+The project follows a complete data science pipeline for building a robust and interpretable classification system.
 
 ### 1. Data Loading and Preparation
-* The UCI Wine Quality dataset is loaded. It contains 11 physicochemical features (e.g., `fixed acidity`, `volatile acidity`, `alcohol`) and a `quality` score (from 3 to 9).
-* The target variable is simplified into three categories: "bad," "normal," and "good."
+* The "Predict students' dropout and academic success" dataset from the UCI Machine Learning Repository is loaded.
+* The dataset is explored to understand its structure, containing over 4,400 student records and 36 different features.
 
 ### 2. Exploratory Data Analysis (EDA)
-* The distribution of the target variable (`quality`) is analyzed, revealing a significant **class imbalance**: the vast majority of wines are classified as "normal," with very few "bad" or "good" examples. This insight is critical for the next step.
-* A correlation heatmap is generated to visualize the relationships between the different chemical properties.
+* The distribution of the target variable (`Target`) is analyzed, showing a balanced representation of the three outcome classes (Dropout, Enrolled, Graduate).
+* **Interactive visualizations** are created using `plotly` to explore the relationships between various features and student outcomes. For example, analysis shows a strong correlation between a student's scholarship status and their likelihood of graduating. 
 
-### 3. Handling Class Imbalance (SMOTE)
-* To address the class imbalance, **SMOTE (Synthetic Minority Over-sampling Technique)** is used.
-* SMOTE works by creating new, synthetic data points for the minority classes ("bad" and "good"). This provides the model with more examples to learn from, preventing it from becoming biased towards the majority "normal" class and leading to a more robust and accurate model.
+### 3. Preprocessing
+* The categorical target variable is converted into numerical labels using a `LabelEncoder` (`Dropout=0`, `Enrolled=1`, `Graduate=2`).
+* The data is split into features (`X`) and the target variable (`y`).
 
-### 4. Model Training & Comparison
-* Three different classification models are trained on the balanced dataset:
-    1. **Logistic Regression**: A simple and interpretable linear model.
-    2. **Support Vector Machine (SVM)**: A powerful model that finds the optimal hyperplane to separate the classes.
-    3. **Random Forest Classifier**: An ensemble model that combines many decision trees to make a more accurate and stable prediction.
+### 4. Model Training
+* The data is split into training (80%) and testing (20%) sets.
+* A **CatBoost Classifier** is trained on the data. CatBoost is a gradient-boosting framework that is particularly effective at handling datasets with a mix of numerical and categorical features. The `class_weights` parameter is used to ensure the model performs well on all three outcome classes.
 
 ### 5. Evaluation
-* The trained models are evaluated on the unseen test set using the **accuracy score**.
-* The **Random Forest** model emerged as the top performer, achieving the highest accuracy in predicting wine quality.
+* The trained model is evaluated on the unseen test set using several standard metrics:
+    * **Accuracy Score**: The overall percentage of correct predictions.
+    * **Classification Report**: A detailed report showing the **precision, recall, and F1-score** for each of the three outcome classes.
+    * **Confusion Matrix**: A visual breakdown of the model's predictions.
 
-### 6. Explainable AI (XAI) with LIME and SHAP
-This is the final and most insightful step, focusing on explaining the predictions of the best model (Random Forest).
-
-* **LIME (Local Interpretable Model-agnostic Explanations)**: LIME is used to explain **individual predictions**. It answers the question, "Why was *this specific wine* predicted as 'good'?" The output shows which feature values for that single wine had the biggest positive or negative influence on the prediction. 
-
-* **SHAP (SHapley Additive exPlanations)**: SHAP is used to explain the model's behavior **globally**. The SHAP summary plot aggregates the feature contributions across all predictions, revealing which features are, on average, the most important. The analysis clearly identified `alcohol`, `volatile acidity`, and `free sulfur dioxide` as the top three drivers of wine quality. 
+### 6. Explainable AI (XAI) with SHAP
+* To understand *why* the model makes certain predictions, **SHAP** is used.
+* A SHAP summary plot is generated, which ranks the features by their overall impact on the model's predictions. The analysis clearly identifies that **academic performance** (specifically `Curricular units 2nd sem (grade)` and `(approved)`) is by far the most important predictor of a student's academic outcome. 
 
 ---
 
 ## Key Concepts Explained
 
-* **SMOTE**: An over-sampling technique used to handle class imbalance. It creates synthetic samples for the minority class.
-* **Random Forest**: An ensemble learning method that operates by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes of the individual trees.
-* **LIME**: A technique that explains the predictions of any classifier by learning an interpretable model locally around the prediction.
-* **SHAP**: A game theory-based approach for explaining the output of any machine learning model by calculating the contribution of each feature to a prediction.
+* **Multi-Class Classification**: A classification task where each instance can be categorized into one of more than two classes.
+* **CatBoost**: A high-performance, open-source gradient boosting on decision trees library. It's particularly well-suited for datasets with a high number of categorical features.
+* **SHAP (SHapley Additive exPlanations)**: A game theory-based approach for explaining the output of any machine learning model, providing insights into feature importance and impact.
 
 ---
 
 ## Results & Conclusion
 
-The **Random Forest** model, trained on the SMOTE-balanced data, was the most accurate predictor of wine quality. More importantly, the **XAI analysis provided clear, actionable insights**:
+The trained CatBoost model achieved a high **accuracy of 82.3%** on the test set, demonstrating its strong ability to predict student outcomes. The SHAP analysis provided a clear and actionable insight: a student's academic performance in their first year is the single most critical determinant of their future success.
 
-* **Globally**, `alcohol` content is the most significant factor in determining wine quality.
-* **Locally**, LIME was able to provide specific, feature-based justifications for individual predictions.
+This project successfully demonstrates that a well-tuned machine learning model, combined with an explainability framework, can serve as a highly effective tool for educational institutions to proactively support their students and improve academic success rates.
 
-This project successfully demonstrates how to build not just an accurate predictive model, but an **interpretable one**. This transparency is crucial for gaining stakeholder trust and translating a model's predictions into real-world business strategy.
-	
 ---
 ---
 # Time-Series Forecasting of Air Quality (Benzene Levels)
