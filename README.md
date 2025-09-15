@@ -80,7 +80,7 @@ The projects are tiered, from the most technically advanced and research-aligned
 
 15. **[Large-Scale Social Media Sentiment Analysis](Projects/Large_Scale_Social_Media_Sentiment_Analysis.ipynb)**
     * Built a scalable pipeline to classify the sentiment of social media posts for real-time brand monitoring.
-    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![TextBlob](https://img.shields.io/badge/TextBlob-888888) ![NLP](https://img.shields.io/badge/NLP-blue)
+    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![TextBlob](https://img.shields.io/badge/TextBlob-888888) ![LLM](https://img.shields.io/badge/LLM-orange)
 
 ### Tier 5: Foundational Machine Learning Models
 
