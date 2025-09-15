@@ -105,8 +105,8 @@ The projects are tiered, from the most technically advanced and research-aligned
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699)
 
 21. **[Wine Quality Prediction](Projects/Wine_Quality_UCI.ipynb)**
-    * Used physicochemical properties to predict the quality score of wine and explain the results with LIME.
-    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LIME](https://img.shields.io/badge/LIME-FFC107)
+    * Used physicochemical properties to predict the quality score of wine and explain the results with LIME and SHAP.
+    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LIME](https://img.shields.io/badge/LIME-FFC107) ![SHAP](https://img.shields.io/badge/SHAP-E81123)
 
 22. **[Air Quality Prediction](Projects/Air_Quality.ipynb)**
     * Built a high-accuracy XGBoost model to forecast Benzene air pollution levels.
