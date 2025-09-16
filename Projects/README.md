@@ -953,6 +953,78 @@ The trained LSTM model, enhanced with GloVe embeddings, demonstrated strong perf
 
 ---
 ---
+# The Oracle Project: Predictive Customer Intelligence
+
+This project builds a predictive business intelligence tool to forecast both the future value and churn risk of each customer from transactional data. It moves beyond traditional historical analysis to create a forward-looking, strategic framework for Customer Relationship Management (CRM).
+
+The project combines statistical modeling and machine learning to produce its final output: a **Strategic Customer Segmentation Matrix** that visually categorizes every customer based on their predicted value versus their risk of churning.
+
+---
+
+## Strategic Value & Purpose
+
+The purpose of this project is to shift from a reactive to a **proactive CRM strategy**. By understanding not just what customers *have done* but what they are *likely to do*, a business can:
+* **Enable Proactive Retention**: Identify high-value customers who are at risk of leaving *before* they do, allowing for targeted retention efforts.
+* **Personalize Marketing Efforts**: Tailor specific actions to different customer segments, such as launching retention campaigns for "VIPs at High Risk" or upselling to "High Potential" customers.
+* **Maximize Customer Lifetime Value**: Focus marketing and retention budgets on the most valuable customer segments, thereby maximizing profitability and ensuring long-term growth.
+
+---
+
+## Methodology Workflow
+
+The project follows a complete data science pipeline, integrating statistical modeling with machine learning.
+
+### 1. Data Preparation and RFM Analysis
+* The online retail dataset is loaded and cleaned.
+* **RFM (Recency, Frequency, Monetary)** analysis is performed to create a foundational, historical view of customer behavior.
+
+### 2. Customer Lifetime Value (CLV) Prediction
+* The `lifetimes` library is used to forecast the future value of each customer. This involves two statistical models:
+    * A **Beta-Geometric (BG/NBD) model** to predict the number of future purchases.
+    * A **Gamma-Gamma model** to estimate the future monetary value of those purchases.
+* The outputs of these models are combined to calculate the predicted **Customer Lifetime Value (CLV)** for each customer.
+
+### 3. Churn Risk Prediction
+* The features for predicting churn are engineered, including the customer's RFM scores, their predicted number of purchases, and their predicted CLV.
+* A **Random Forest Classifier** is trained on this data to calculate the **Churn Risk**—the probability of a customer becoming inactive.
+
+### 4. Strategic Segmentation
+* The final and most strategic step is to create the **Customer Segmentation Matrix**.
+* This is a 2x2 grid that plots each customer based on their predicted **CLV (Value)** on one axis and their predicted **Churn Risk** on the other.
+* This automatically segments the entire customer base into four actionable quadrants: "High Value, Low Risk," "High Value, High Risk," "Low Value, Low Risk," and "Low Value, High Risk." 
+
+---
+
+## Key Concepts Explained
+
+* **Customer Lifetime Value (CLV)**: A prediction of the net profit attributed to the entire future relationship with a customer.
+* **BG/NBD Model**: A statistical model that predicts the number of future transactions a customer will make based on their past purchasing behavior (recency and frequency).
+* **Gamma-Gamma Model**: A statistical model used to estimate the average monetary value of a customer's transactions.
+* **Random Forest**: An ensemble machine learning model that combines many decision trees to make a more accurate and stable prediction.
+
+---
+
+## Results & Business Action Plan
+
+The analysis successfully segmented the customer base into four strategic quadrants, each with a clear, data-driven action plan:
+
+* **VIPs at High Risk (High Value, High Risk)**:
+    * **Action**: Proactive Retention Campaign. Assign a dedicated account manager, offer exclusive discounts, or provide loyalty rewards.
+    * **BI Insight**: These are your most valuable customers who are about to leave. The ROI on retaining them is highest.
+
+* **High Potential (High Value, Low Risk)**:
+    * **Action**: Nurture and Upsell. Introduce them to new products, premium services, or loyalty programs to further increase their value.
+    * **BI Insight**: These are your brand champions. Leverage them for testimonials and referrals.
+
+* **At-Risk Potentials (Medium Value, High Risk)**:
+    * **Action**: Automated Retention. Send personalized emails with special offers or conduct surveys to understand their dissatisfaction.
+    * **BI Insight**: A targeted, automated campaign can efficiently retain this group without overspending.
+
+* **Low Value, Low Risk**:
+    * **Action**: Monitor and Maintain. Keep them engaged with standard marketing communications. No need for expensive, personalized outreach.
+    * **BI Insight**: This group is stable but provides lower returns. A low-cost communication strategy is most effective.
+---
+---
 # Wine Quality Prediction with Explainable AI (XAI)
 
 This project develops and compares several machine learning models to predict the quality of white wine based on its chemical properties. Using the well-known UCI Wine Quality dataset, the analysis goes beyond simple prediction by employing **Explainable AI (XAI)** techniques—specifically **LIME** and **SHAP**—to understand *why* the best-performing model makes its predictions.
