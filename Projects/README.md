@@ -1024,8 +1024,31 @@ The **Random Forest** model, trained on the SMOTE-balanced data, was the most ac
 
 This project successfully demonstrates how to build not just an accurate predictive model, but an **interpretable one**. This transparency is crucial for gaining stakeholder trust and translating a model's predictions into real-world business strategy.
 	
+---
+---
+# Predictive Modeling for Census Income Level
 
-	
+* **Project Goal:** The primary objective is to build a machine learning model that accurately predicts whether an individual's annual income is over or under $50,000.
+
+* **Dataset:** The project uses the "Adult" Census Income dataset from the UCI Machine Learning Repository. The training and test data are loaded from separate files (`adult.data` and `adult.test`).
+
+* **Methodology & Workflow:**
+    * **Exploratory Data Analysis (EDA):** The project begins by visualizing the data to understand its characteristics. This includes creating count plots for the income classes (`<=50K` and `>50K`) and distributions for categorical features like 'workclass', 'education', and 'occupation'. Histograms are also used to show the distribution of numerical features such as 'age' and 'hours-per-week'.
+    * **Data Preprocessing:** A comprehensive preprocessing pipeline is constructed to prepare the data for modeling. For numerical columns, this involves filling missing values using the median and then scaling the data with `StandardScaler`. For categorical columns, missing values are filled with the most frequent value, and the features are converted into a numerical format using `OneHotEncoder`. The target variable ('income') is encoded into 0 (`<=50K`) and 1 (`>50K`) using `LabelEncoder`.
+    * **Model Training:** An XGBoost Classifier is chosen as the predictive model. It is trained using specific parameters like 200 estimators and a max depth of 5. This entire process, from preprocessing to classification, is streamlined into a single `Pipeline`.
+
+* **Model Evaluation & Results:**
+    * The model's performance is evaluated on the test dataset, achieving an **accuracy of approximately 87%**.
+    * A detailed **Classification Report** shows the precision, recall, and f1-score for both income classes.
+    * A **Confusion Matrix** is plotted to visualize the number of correct and incorrect predictions for each class.
+    * A **Receiver Operating Characteristic (ROC) Curve** is generated, and the Area Under the Curve **(AUC) score is 0.93**, indicating strong predictive capability.
+
+* **Project Purpose:**
+    * To identify the key demographic and socio-economic factors that influence income level.
+    * To build a reliable and accurate classification model for socio-economic analysis.
+    * To provide data-driven insights that can be valuable for applications in targeted marketing, financial services, and public policy.
+
+
 ---
 ---
 # Human Activity Recognition (HAR) with Smartphone Data
