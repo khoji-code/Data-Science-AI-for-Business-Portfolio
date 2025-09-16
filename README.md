@@ -84,35 +84,39 @@ The projects are tiered, from the most technically advanced and research-aligned
 
 ### Tier 5: Foundational Machine Learning Models
 
-16. **[Wine Quality Prediction](Projects/Wine_Quality_UCI.ipynb)**
+16. **[The Oracle Project Predictive Customer Intelligence](Projects/The_Oracle_Project_Predictive_Customer_Intelligence.ipynb)**
+    * This predictive tool segments customers by forecasting their lifetime value and churn risk to enable targeted marketing strategies.
+    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![CLV](https://img.shields.io/badge/CLV-000080)
+    * 
+17. **[Wine Quality Prediction](Projects/Wine_Quality_UCI.ipynb)**
     * Used physicochemical properties to predict the quality score of wine and explain the results with LIME and SHAP.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LIME](https://img.shields.io/badge/LIME-FFC107) ![SHAP](https://img.shields.io/badge/SHAP-E81123)
 
-17. **[Predictive Modeling for Census Income Level](Projects/Predictive_Modeling_for_Census_Income_Level.ipynb)**
+18. **[Predictive Modeling for Census Income Level](Projects/Predictive_Modeling_for_Census_Income_Level.ipynb)**
     * Accurate Classification Model for Income Prediction, which can be applied to various Socio-Economic Analyses with 87% accuracy.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699)
       
-18. **[Human Activity Recognition (HAR) with Smartphone Data](Projects/Human_Activity_Recognition_(HAR)_with_Smartphone_Data.ipynb)**
+19. **[Human Activity Recognition (HAR) with Smartphone Data](Projects/Human_Activity_Recognition_(HAR)_with_Smartphone_Data.ipynb)**
     * Classified human activities from sensor data with 92.57% accuracy.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699)
 
-19. **[Time-Series Forecasting for Bike Share Demand](Projects/Time_Series_Forecasting_for_Bike_Share_Demand.ipynb)**
+20. **[Time-Series Forecasting for Bike Share Demand](Projects/Time_Series_Forecasting_for_Bike_Share_Demand.ipynb)**
     * Forecasted hourly bike rental demand with an R-squared of 0.751.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LightGBM](https://img.shields.io/badge/LightGBM-B90948)
 
-20. **[Time-Series Forecasting of Household Power Consumption](Projects/Time_Series_Forecasting_of_Household_Power_Consumption.ipynb)**
+21. **[Time-Series Forecasting of Household Power Consumption](Projects/Time_Series_Forecasting_of_Household_Power_Consumption.ipynb)**
     * Predicted daily household electricity consumption with a high R-squared of 0.837.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699)
 
-21. **[Socio-Economic Factors for Income Prediction](Projects/Socio_Economic_Factors_for_Income_Prediction.ipynb)**
+22. **[Socio-Economic Factors for Income Prediction](Projects/Socio_Economic_Factors_for_Income_Prediction.ipynb)**
     * Predicted income level from census data with 87% accuracy.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699)
 
-22. **[Predict Students' Dropout and Academic Success](Projects/Predict_Students'_Dropout_and_Academic_Success.ipynb)**
+23. **[Predict Students' Dropout and Academic Success](Projects/Predict_Students'_Dropout_and_Academic_Success.ipynb)**
     * Predicted student outcomes to enable proactive institutional support.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![CatBoost](https://img.shields.io/badge/CatBoost-009966)
 
-23. **[Air Quality Prediction](Projects/Air_Quality.ipynb)**
+24. **[Air Quality Prediction](Projects/Air_Quality.ipynb)**
     * Built a high-accuracy XGBoost model to forecast Benzene air pollution levels.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699)
 	
