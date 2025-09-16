@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Portfolio-Data_Science_&_AI-5A2A9A?style=for-the-badge&logo=python" alt="Portfolio Badge"/>
   <h1>📊 Data Science & AI for Business Portfolio 📈</h1>
   <p>
-    A curated collection of 22 projects demonstrating the application of cutting-edge AI and data science to solve complex, real-world business challenges.
+    A curated collection of 24 projects demonstrating the application of cutting-edge AI and data science to solve complex, real-world business challenges.
   </p>
 </div>
 
@@ -22,7 +22,7 @@ The projects are tiered, from the most technically advanced and research-aligned
 
 2. **[CRM Digital Twin & Interactive Business Intelligence Dashboard](Projects/CRM_Digital_Twin_and_Interactive_Business_Intelligence_Dashboard.ipynb)**
     * Created a synthetic CRM "digital twin" and built an interactive dashboard for sales performance monitoring.
-    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699) ![BI](https://img.shields.io/badge/Business_Intelligence-0078D4)
+    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699) ![BI](https://img.shields.io/badge/Business_Intelligence-0078D4) ![CLV](https://img.shields.io/badge/CLV-000080)
 
 3. **[Reinforcement Learning for Dynamic Pricing](Projects/Reinforcement_Learning_for_Dynamic_Pricing.ipynb)**
     * Developed a DQN agent to learn a revenue-maximizing dynamic pricing policy in a simulated market.
@@ -87,7 +87,8 @@ The projects are tiered, from the most technically advanced and research-aligned
 16. **[The Oracle Project Predictive Customer Intelligence](Projects/The_Oracle_Project_Predictive_Customer_Intelligence.ipynb)**
     * This predictive tool segments customers by forecasting their lifetime value and churn risk to enable targeted marketing strategies.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![CLV](https://img.shields.io/badge/CLV-000080)
-    * 
+
+	  
 17. **[Wine Quality Prediction](Projects/Wine_Quality_UCI.ipynb)**
     * Used physicochemical properties to predict the quality score of wine and explain the results with LIME and SHAP.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LIME](https://img.shields.io/badge/LIME-FFC107) ![SHAP](https://img.shields.io/badge/SHAP-E81123)
