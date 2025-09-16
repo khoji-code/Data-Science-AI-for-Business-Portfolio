@@ -89,7 +89,7 @@ The projects are tiered, from the most technically advanced and research-aligned
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LIME](https://img.shields.io/badge/LIME-FFC107) ![SHAP](https://img.shields.io/badge/SHAP-E81123)
 
 17. **[Predictive Modeling for Census Income Level](Projects/Predictive_Modeling_for_Census_Income_Level.ipynb)**
-    * Accurate Classification Model for Income Prediction, which can be applied to various Socio-Economic Analyses.
+    * Accurate Classification Model for Income Prediction, which can be applied to various Socio-Economic Analyses with 87% accuracy.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699)
       
 18. **[Human Activity Recognition (HAR) with Smartphone Data](Projects/Human_Activity_Recognition_(HAR)_with_Smartphone_Data.ipynb)**
