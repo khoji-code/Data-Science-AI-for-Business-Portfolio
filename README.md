@@ -120,4 +120,8 @@ The projects are tiered, from the most technically advanced and research-aligned
 24. **[Air Quality Prediction](Projects/Air_Quality.ipynb)**
     * Built a high-accuracy XGBoost model to forecast Benzene air pollution levels.
     * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBoost-006699)
+   
+25. **[Genetic Algorithm with Neural Network Surrogate Model](Projects/Genetic_Algorithm_neural_network_surrogate_model.ipynb)**
+    * This project shows how to speed up solving a slow optimization problem by combining a Genetic Algorithm (GA) with a neural network surrogate model.
+    * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
 	
