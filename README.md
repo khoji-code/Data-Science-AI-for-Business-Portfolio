@@ -9,7 +9,7 @@
   </p>
 
   <img src="https://img.shields.io/badge/Status-Seeking_Research_Opportunities-8A2BE2?style=for-the-badge" alt="Status"/>
-  <img src="https://img.shields.io/badge/Focus-PhD_Research_&_Q1_Publications-5A2A9A?style=for-the-badge" alt="Focus"/>
+  <img src="https://img.shields.io/badge/Focus-PhD_Research_&_Publications-5A2A9A?style=for-the-badge" alt="Focus"/>
 </div>
 
 ---
