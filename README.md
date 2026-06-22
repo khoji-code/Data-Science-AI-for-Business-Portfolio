@@ -8,8 +8,8 @@
     Specializing in <b>Theoretical Deep Learning, Continual Learning, and Algorithmic Business Intelligence</b>.
   </p>
 
-  <img src="https://img.shields.io/badge/Status-Seeking_Research_Opportunities-8A2BE2?style=for-the-badge" alt="Status"/>
-  <img src="https://img.shields.io/badge/Focus-PhD_Research_&_Publications-5A2A9A?style=for-the-badge" alt="Focus"/>
+  <img src="https://img.shields.io/badge/Status-Seeking_Research_Opportunities-003F38?style=for-the-badge" alt="Status"/>
+  <img src="https://img.shields.io/badge/Focus-PhD_Research_&_Publications-24796F?style=for-the-badge" alt="Focus"/>
 </div>
 
 ---
