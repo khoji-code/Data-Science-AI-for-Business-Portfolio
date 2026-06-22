@@ -1,8 +1,8 @@
 <div align="center">
   <img src="https://i.pinimg.com/originals/35/a7/c3/35a7c36a49536515735de5b8a47587a8.gif" width="100%"/>
   
-  # Abolfazl [Last Name]
-  ## AI Research Engineer | PhD Candidate Portfolio
+  # Abolfazl Khojasteh
+  ## 📊 Data Science & AI for Business Portfolio 📈
   
   <p align="center">
     Specializing in <b>Theoretical Deep Learning, Continual Learning, and Algorithmic Business Intelligence</b>.
